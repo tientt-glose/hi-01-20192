@@ -12,6 +12,7 @@
     "rc-tween-one": "^2.6.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-gantt-timeline": "^0.4.3",
     "react-github-button": "^0.1.11",
     "react-scripts": "3.4.1"
   },
