@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Row, Col } from 'antd';
-import { EyeOutlined, VideoCameraAddOutlined, WarningOutlined, ProjectOutlined, FileDoneOutlined, ClusterOutlined } from '@ant-design/icons';
+import { EyeOutlined, VideoCameraAddOutlined, WarningOutlined, ProjectOutlined, FileDoneOutlined, ClusterOutlined,
+         SmileOutlined, BellOutlined, InfoCircleOutlined } from '@ant-design/icons';
 
 const LOGO_URL = 'https://gw.alipayobjects.com/zos/rmsportal/gVAKqIsuJCepKNbgbSwE.svg';
 
@@ -30,7 +31,7 @@ class Header extends Component {
             </div>
           </Col>
           <Col span={18}>
-            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float: 'left'}}>
+            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float: 'right'}}>
               {/* <Menu.Item key="mail" icon={<MailOutlined />}>
                 Navigation One
               </Menu.Item>
@@ -90,6 +91,12 @@ class Header extends Component {
                 <Menu.Item key="setting:4">Tạo báo cáo kết quả tiến độ theo mẫu</Menu.Item>
               </SubMenu>
 
+              <Menu.Item icon={<InfoCircleOutlined />}></Menu.Item>
+              <Menu.Item icon={<BellOutlined />}></Menu.Item>
+              <Menu.Item icon={<SmileOutlined />}></Menu.Item>
+
+            
+              
             </Menu>
           </Col>
         </Row>
