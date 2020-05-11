@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, Row, Col } from 'antd';
 import { EyeOutlined, VideoCameraAddOutlined, WarningOutlined, ProjectOutlined, FileDoneOutlined, ClusterOutlined,
          SmileOutlined, BellOutlined, InfoCircleOutlined } from '@ant-design/icons';
@@ -25,10 +26,12 @@ class Header extends Component {
       <div id="header" className="header">
         <Row type="flex" align="middle">
           <Col span={6}>
-            <div id="logo" to="/">
-              <img src={LOGO_URL} alt="logo" />
-              <span>ANT DESIGN PRO</span>
-            </div>
+            <Link to={`/`}>
+              <div id="logo" to="/">
+                <img src={LOGO_URL} alt="logo" />
+                <span>ANT DESIGN PRO</span>
+              </div>
+            </Link>
           </Col>
           <Col span={18}>
             <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float: 'right'}}>
@@ -86,7 +89,9 @@ class Header extends Component {
 
               <SubMenu icon={<ProjectOutlined />} title="Giám sát thi công">
                 <Menu.Item key="setting:1">Xem danh sách công trình</Menu.Item>
-                <Menu.Item key="setting:2">Thống kê tiến độ</Menu.Item>
+                <Menu.Item key="setting:2">
+                  <Link to={`/gantt`}>Thống kê tiến độ</Link>
+                </Menu.Item>
                 <Menu.Item key="setting:3">Tạo công trình</Menu.Item>
                 <Menu.Item key="setting:4">Tạo báo cáo kết quả tiến độ theo mẫu</Menu.Item>
               </SubMenu>
