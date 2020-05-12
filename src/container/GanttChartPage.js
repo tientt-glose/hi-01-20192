@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../component/Header'
 import GanttCRUD from '../component/ForGantt/Gantt_CRUD'
 import BreadCrumbForGantt from '../component/ForGantt/BreadCrumbForGantt'
+import ConstructionInfo from '../component/ForGantt/ConstructionInfo'
 
 class GanttChartPage extends Component {
 
@@ -15,6 +16,16 @@ class GanttChartPage extends Component {
     d3.setDate(d3.getDate() + 8);
     let d4 = new Date();
     d4.setDate(d4.getDate() + 20);
+
+    let work = {
+      name: "Công trình A",
+      leader: "Nguyễn Văn A",
+      start: "16/04/2020",
+      end: "01/07/2020",
+      duration: 65,
+      members: 15,
+      imgUrl: "https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg"
+    }
 
     let data = [
       {
@@ -34,7 +45,7 @@ class GanttChartPage extends Component {
       }
     ];
 
-    this.state = { data: data }
+    this.state = { data: data, work: work }
   }
 
   render() {
@@ -42,6 +53,8 @@ class GanttChartPage extends Component {
       <div>
         <Header />
         <BreadCrumbForGantt />
+        <ConstructionInfo 
+          work = {this.state.work} />
         <GanttCRUD
           data = {this.state.data} /> 
       </div>

@@ -130,6 +130,10 @@ class Gantt_CRUD extends Component {
     return (
       <div>
         <div className="app-container">
+          <div id="ganttButtonGroup">
+            <Button onClick={this.addTask}>Add</Button>
+            <Button onClick={this.delete}>Delete</Button>
+          </div>
           <table id="dateForGantt"> 
             <tbody>
               <tr>
@@ -161,10 +165,7 @@ class Gantt_CRUD extends Component {
             />
           </div>
         </div>
-          <div id="ganttButtonGroup">
-            <Button onClick={this.addTask}>Add</Button>
-            <Button onClick={this.delete}>Delete</Button>
-          </div>
+        
         {/* <div>
           this is a date
           {`${this.state.data[0].start}`}
