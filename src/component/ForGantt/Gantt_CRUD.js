@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Button } from 'antd';
 import TimeLine from 'react-gantt-timeline';
-import { Button } from 'antd'
 import './Gantt.css';
+
+const A_DAY = 60*60*24*1000;
 
 class Gantt_CRUD extends Component {
   constructor(props) {
@@ -79,42 +81,77 @@ class Gantt_CRUD extends Component {
   };
 
   render() {
+    console.log((this.state.data[0].end - this.state.data[0].start)/A_DAY)
+
+    const printDateAndDuration = 
+      this.state.data.map(work => {
+        return (
+          <tr>
+            <td className="non-header">{work.start.toLocaleDateString()}</td>
+            <td className="non-header">{work.end.toLocaleDateString()}</td>
+            <td className="non-header">{(work.end - work.start)/A_DAY}</td>
+          </tr>
+        )
+      })
+    
     return (
-      <div className="app-container">
-        {/* <div className="nav-container">
-          <div className="mode-container-title">Crud Demo</div>
-          <div className="operation-button-container">
-            <div className="mode-button" onClick={this.addTask}>
-              <svg height={30} width={30} viewBox="0 0 48 48">
-                <path
-                  fill="silver"
-                  d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"
-                />
-              </svg>
+      <div>
+        <div className="app-container">
+          {/* <div className="nav-container">
+            <div className="mode-container-title">Crud Demo</div>
+            <div className="operation-button-container">
+              <div className="mode-button" onClick={this.addTask}>
+                <svg height={30} width={30} viewBox="0 0 48 48">
+                  <path
+                    fill="silver"
+                    d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"
+                  />
+                </svg>
+              </div>
+              <div className="mode-button" onClick={this.delete}>
+                <svg height={30} width={30} viewBox="0 0 48 48">
+                  <path fill="silver" d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22H14v-4h20v4z" />
+                </svg>
+              </div>
             </div>
-            <div className="mode-button" onClick={this.delete}>
-              <svg height={30} width={30} viewBox="0 0 48 48">
-                <path fill="silver" d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22H14v-4h20v4z" />
-              </svg>
-            </div>
+          </div> */}
+          <table id="dateForGantt"> 
+            <tr>
+              <td className="header">Start date</td>
+              <td className="header">End date</td>
+              <td className="header">Duration</td>
+            </tr>
+            {printDateAndDuration}
+            {/* <tr>
+              <td className="non-header">01/01/2020</td>
+              <td className="non-header">01/02/2020</td>
+              <td className="non-header">31</td>
+            </tr>
+            <tr>
+              <td className="non-header">01/01/2020</td>
+              <td className="non-header">01/02/2020</td>
+              <td className="non-header">31</td>
+            </tr> */}
+          </table>
+          <div className="time-line-container">
+            <TimeLine
+              data={this.state.data}
+              links={this.state.links}
+              onUpdateTask={this.onUpdateTask}
+              onCreateLink={this.onCreateLink}
+              onSelectItem={this.onSelectItem}
+              selectedItem={this.state.selectedItem}
+            />
           </div>
-        </div> */}
+        </div>
         <div id="ganttButtonGroup">
           <Button onClick={this.addTask}>Add</Button>
           <Button onClick={this.delete}>Delete</Button>
         </div>
-        <div className="time-line-container">          
-        
-          
-          <TimeLine
-            data={this.state.data}
-            links={this.state.links}
-            onUpdateTask={this.onUpdateTask}
-            onCreateLink={this.onCreateLink}
-            onSelectItem={this.onSelectItem}
-            selectedItem={this.state.selectedItem}
-          />
-        </div>
+        {/* <div>
+          this is a date
+          {`${this.state.data[0].start}`}
+        </div> */}
       </div>
     );
   }

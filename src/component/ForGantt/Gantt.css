@@ -21,12 +21,37 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 
-#ganttButtonGroup {
-  display: inline;
+#dateForGantt {
+  /* display: inline; */
+  float: left;
+}
+
+#dateForGantt {
+  border-top: 1.5px solid silver; 
+  border-left: 1.5px solid silver;
+  border-bottom: 1.5px solid silver;
+  text-align: center;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  width: 20%;
+}
+
+#dateForGantt .header {
+  border-bottom: 1px solid silver;
+  background-color:rgb(51, 51, 51);
+  font-size: 12px;
+  line-height: 18px;
+  color: white;
+  padding: 21px 11px 21px 11px;
+}
+
+#dateForGantt .non-header {
+  border-bottom: 1px solid silver;
 }
 
 .time-line-container {
@@ -34,8 +59,8 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   /* align-items: center; */
-  float:right;
-  width: 89%;
+  float: left;
+  width: 75%;
   height: 100%;
 }
 
