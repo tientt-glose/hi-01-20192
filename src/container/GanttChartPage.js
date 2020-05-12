@@ -20,14 +20,16 @@ class GanttChartPage extends Component {
         id: 1,
         start: d1,
         end: d2,
-        name: 'Demo Task 1'
+        name: 'Demo Task 1',
+        percentage: 100
       },
       {
         id: 2,
         start: d3,
         end: d4,
         name: 'Demo Task 2',
-        color: 'orange'
+        color: 'orange',
+        percentage: 0
       }
     ];
 

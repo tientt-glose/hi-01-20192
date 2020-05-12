@@ -53,6 +53,7 @@ class Gantt_CRUD extends Component {
   };
   onSelectItem = (item) => {
     console.log(`Select Item ${item}`);
+    console.log(item)
     this.setState({ selectedItem: item });
   };
 
@@ -62,7 +63,8 @@ class Gantt_CRUD extends Component {
       start: new Date(),
       end: this.getRandomDate(),
       name: 'New Task',
-      color: this.getRandomColor()
+      color: this.getRandomColor(),
+      percentage: Math.floor(Math.random() * 100) + 1
     };
     this.setState({ data: [newTask, ...this.state.data] });
   };
@@ -106,17 +108,21 @@ class Gantt_CRUD extends Component {
   render() {
     const printDateAndDuration = 
       this.state.data.map(work => {
+        // const checkDueDate = work.percentage < 100 && (new Date() - work.end > 0) ? 'red': 'black'
+        const checkDueDate = (new Date() - work.end > 0) ? (
+          work.percentage < 100 ? "red" : "blue"
+        ) : "black"
         return (
-          <tr>
+          <tr key={work.id} style={{ color:  checkDueDate }}>
             {/* <td className="non-header">{work.start.toLocaleDateString()}</td>
             <td className="non-header">{work.end.toLocaleDateString()}</td> */}
             <td className="non-header" onClick={() => this.onSelectItem(work)}>
-              <DatePicker value={moment(work.start, dateFormat)} format={dateFormat} onChange={this.onChangeStartDay} />
+              <DatePicker value={moment(work.start, dateFormat)} format={dateFormat} onChange={this.onChangeStartDay} bordered={false} />
             </td>
             <td className="non-header" onClick={() => this.onSelectItem(work)}>
-              <DatePicker value={moment(work.end, dateFormat)} format={dateFormat} onChange={this.onChangeEndDay} />
+              <DatePicker value={moment(work.end, dateFormat)} format={dateFormat} onChange={this.onChangeEndDay} bordered={false}/>
             </td>
-            <td className="non-header">{((work.end - work.start)/A_DAY).toFixed(0)}</td>
+            <td className="non-header" >{((work.end - work.start)/A_DAY).toFixed(0)}</td>
           </tr>
         )
       })
@@ -125,12 +131,14 @@ class Gantt_CRUD extends Component {
       <div>
         <div className="app-container">
           <table id="dateForGantt"> 
-            <tr>
-              <td className="header">Start date</td>
-              <td className="header">End date</td>
-              <td className="header">Duration</td>
-            </tr>
-            {printDateAndDuration}
+            <tbody>
+              <tr>
+                <td className="header">Start date</td>
+                <td className="header">End date</td>
+                <td className="header">Duration</td>
+              </tr>
+              {printDateAndDuration}
+            </tbody>
             {/* <tr>
               <td className="non-header">01/01/2020</td>
               <td className="non-header">01/02/2020</td>

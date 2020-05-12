@@ -60,9 +60,13 @@ html {
   height: 20px;
 }
 
+#dateForGantt .non-header .danger{
+  color: red;
+}
+
 #dateForGantt .ant-picker {
   height: 10px;
-  border: transparent;
+  /* border: transparent; */
 }
 
 .time-line-container {
