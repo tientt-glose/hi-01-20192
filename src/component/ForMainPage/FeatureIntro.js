@@ -1,6 +1,6 @@
 import React from 'react';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import Parallax from 'rc-scroll-anim/lib/ScrollParallax';
+// import Parallax from 'rc-scroll-anim/lib/ScrollParallax';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
@@ -8,64 +8,64 @@ const { TweenOneGroup } = TweenOne;
 
 const featuresCN = [
   {
-    title: 'Page 1.1',
-    content: 'Detailed Page 1.1',
+    title: 'Điều khiển payload',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/VriUmzNjDnjoFoFFZvuh.svg',
     color: '#13C2C2',
     shadowColor: 'rgba(19,194,194,.12)',
   },
   {
-    title: 'Page 1.2',
-    content: 'Detailed Page 1.2',
+    title: 'Tạo đợt kiểm tra thủ công',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/smwQOoxCjXVbNAKMqvWk.svg',
     color: '#2F54EB',
     shadowColor: 'rgba(47,84,235,.12)',
   },
   {
-    title: 'Page 1.3',
-    content: 'Detailed Page 1.3',
+    title: 'Thiết lập hành trình bay tự động',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/hBbIHzUsSbSxrhoRFYzi.svg',
     color: '#F5222D',
     shadowColor: 'rgba(245,34,45,.12)',
   },
   {
-    title: 'Page 1.4',
-    content: 'Detailed Page 1.4',
+    title: 'Quản lý dữ liệu bay',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/BISfzKcCNCYFmTYcUygW.svg',
     color: '#1AC44D',
     shadowColor: 'rgba(26,196,77,.12)',
   },
   {
-    title: 'Page 1.5',
-    content: 'Detailed Page 1.5',
+    title: 'Quản lý tổ đội bay',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/XxqEexmShHOofjMYOCHi.svg',
     color: '#FAAD14',
     shadowColor: 'rgba(250,173,20,.12)',
   },
   {
-    title: 'Page 1.6',
-    content: 'Detailed Page 1.6',
+    title: 'Quản lý lịch sử bay',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/JsixxWSViARJnQbAAPkI.svg',
     color: '#722ED1',
     shadowColor: 'rgba(114,46,209,.12)',
   },
   {
-    title: 'Page 1.7',
-    content: 'Detailed Page 1.7',
+    title: 'Xem danh sách các đợt kiểm tra',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/pbmKMSFpLurLALLNliUQ.svg',
     color: '#FA8C16',
     shadowColor: 'rgba(250,140,22,.12)',
   },
   {
-    title: 'Page 1.8',
-    content: 'Detailed Page 1.8',
+    title: 'Xem danh sách công trình',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/aLQyKyUyssIUhHTZqCIb.svg',
     color: '#EB2F96',
     shadowColor: 'rgba(235,45,150,.12)',
   },
   {
-    title: 'Page 1.9',
-    content: 'Detailed Page 1.9',
+    title: 'Xem danh sách drone xung quanh',
+    content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/RpJIQitGbSCHwLMimybX.svg',
     color: '#1890FF',
     shadowColor: 'rgba(24,144,255,.12)',
@@ -182,14 +182,14 @@ class Page1 extends React.PureComponent {
     return (
       <div className="home-page page1" >
         <div className="home-page-wrapper" id="page1-wrapper">
-          <Parallax
+          {/* <Parallax
             className="page1-bg"
             animation={{ translateY: 200, ease: 'linear', playScale: [0, 1.65] }}
             location="page1-wrapper"
           >
             Feature
-          </Parallax>
-          <h2>What can <span>Pro</span> do for you </h2>
+          </Parallax> */}
+          <h2>Hey! <span>EFD</span> có thể làm gì cho bạn </h2>
           <div className="title-line-wrapper page1-line">
             <div className="title-line" />
           </div>
