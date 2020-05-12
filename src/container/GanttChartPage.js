@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import GanttCRUD from '../component/ForGantt/Gantt_CRUD'
 import Header from '../component/Header'
+import GanttCRUD from '../component/ForGantt/Gantt_CRUD'
+import BreadCrumbForGantt from '../component/ForGantt/BreadCrumbForGantt'
 
 class GanttChartPage extends Component {
 
@@ -40,6 +41,7 @@ class GanttChartPage extends Component {
     return (
       <div>
         <Header />
+        <BreadCrumbForGantt />
         <GanttCRUD
           data = {this.state.data} /> 
       </div>
