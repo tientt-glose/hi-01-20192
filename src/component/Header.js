@@ -4,7 +4,8 @@ import { Menu, Row, Col } from 'antd';
 import { EyeOutlined, VideoCameraAddOutlined, WarningOutlined, ProjectOutlined, FileDoneOutlined, ClusterOutlined,
          SmileOutlined, BellOutlined, InfoCircleOutlined } from '@ant-design/icons';
 
-const LOGO_URL = 'https://gw.alipayobjects.com/zos/rmsportal/gVAKqIsuJCepKNbgbSwE.svg';
+const LOGO_URL = 'https://i.ibb.co/DzC39Tm/EFD-Egypt-50646-1577276120-og-1.jpg';
+// const LOGO_URL = 'https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_EFD_induction.svg';
 
 const { SubMenu } = Menu 
 
@@ -29,7 +30,7 @@ class Header extends Component {
             <Link to={`/`}>
               <div id="logo" to="/">
                 <img src={LOGO_URL} alt="logo" />
-                <span>ANT DESIGN PRO</span>
+                <span>ELECTRIC FAULT DETECTION</span>
               </div>
             </Link>
           </Col>

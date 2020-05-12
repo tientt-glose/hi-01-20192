@@ -15,18 +15,18 @@ class Banner extends Component {
               style={{ transform: 'translateX(-64px)' }}
             />
           </div>
-          <h1 key="h1">ANT DESIGN PRO</h1>
+          <h1 key="h1">Xin chào! Chào mừng bạn quay trở lại</h1>
           <p key="content">
-            Banner 1
+            Chức năng sử dụng gần đây...
           </p>
           <div key="button" className="button-wrapper">
           <a href="http://preview.pro.ant.design" target="_blank" rel="noopener noreferrer">
             <Button type="primary">
-              Banner 2
+              Tạo công trình
             </Button>
           </a>
           <Button style={{ margin: '0 16px' }} type="primary" ghost>
-            Banner 3
+            Kết nối drone
           </Button>
         </div>
         </QueueAnim>
