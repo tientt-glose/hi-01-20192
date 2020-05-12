@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
+import { Button, DatePicker } from 'antd';
+import moment from 'moment';
 import TimeLine from 'react-gantt-timeline';
 import './Gantt.css';
 
 const A_DAY = 60*60*24*1000;
+const dateFormat = 'YYYY/MM/DD';
 
 class Gantt_CRUD extends Component {
   constructor(props) {
     super(props);
     this.state = { data: this.props.data, links: [], selectedItem: null };
   }
+
   genID() {
     function S4() {
       return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
@@ -80,16 +83,38 @@ class Gantt_CRUD extends Component {
     }
   };
 
-  render() {
-    console.log((this.state.data[0].end - this.state.data[0].start)/A_DAY)
+  onChangeStartDay = (value, dateString) => {
+    let data = this.state.data
+    console.log("Pre: ")
+    console.log(data)
+    if(this.state.selectedItem) {
+      data[this.state.selectedItem.id - 1].start = dateString ? new Date(dateString) : this.state.selectedItem.start
+      console.log("Post: ")
+    }
+    this.setState({ data: [...this.state.data] });
+  }
 
+  onChangeEndDay = (value, dateString) => {
+    let data = this.state.data
+    if(this.state.selectedItem) 
+      data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+    this.setState({ data: [...this.state.data] });
+  }
+
+  render() {
     const printDateAndDuration = 
       this.state.data.map(work => {
         return (
           <tr>
-            <td className="non-header">{work.start.toLocaleDateString()}</td>
-            <td className="non-header">{work.end.toLocaleDateString()}</td>
-            <td className="non-header">{(work.end - work.start)/A_DAY}</td>
+            {/* <td className="non-header">{work.start.toLocaleDateString()}</td>
+            <td className="non-header">{work.end.toLocaleDateString()}</td> */}
+            <td className="non-header" onClick={() => this.onSelectItem(work)}>
+              <DatePicker value={moment(work.start, dateFormat)} format={dateFormat} onChange={this.onChangeStartDay} />
+            </td>
+            <td className="non-header" onClick={() => this.onSelectItem(work)}>
+              <DatePicker value={moment(work.end, dateFormat)} format={dateFormat} onChange={this.onChangeEndDay} />
+            </td>
+            <td className="non-header">{((work.end - work.start)/A_DAY).toFixed(0)}</td>
           </tr>
         )
       })
@@ -97,24 +122,6 @@ class Gantt_CRUD extends Component {
     return (
       <div>
         <div className="app-container">
-          {/* <div className="nav-container">
-            <div className="mode-container-title">Crud Demo</div>
-            <div className="operation-button-container">
-              <div className="mode-button" onClick={this.addTask}>
-                <svg height={30} width={30} viewBox="0 0 48 48">
-                  <path
-                    fill="silver"
-                    d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22h-8v8h-4v-8h-8v-4h8v-8h4v8h8v4z"
-                  />
-                </svg>
-              </div>
-              <div className="mode-button" onClick={this.delete}>
-                <svg height={30} width={30} viewBox="0 0 48 48">
-                  <path fill="silver" d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm10 22H14v-4h20v4z" />
-                </svg>
-              </div>
-            </div>
-          </div> */}
           <table id="dateForGantt"> 
             <tr>
               <td className="header">Start date</td>
@@ -144,10 +151,10 @@ class Gantt_CRUD extends Component {
             />
           </div>
         </div>
-        <div id="ganttButtonGroup">
-          <Button onClick={this.addTask}>Add</Button>
-          <Button onClick={this.delete}>Delete</Button>
-        </div>
+          <div id="ganttButtonGroup">
+            <Button onClick={this.addTask}>Add</Button>
+            <Button onClick={this.delete}>Delete</Button>
+          </div>
         {/* <div>
           this is a date
           {`${this.state.data[0].start}`}
