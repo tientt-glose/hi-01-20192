@@ -85,19 +85,21 @@ class Gantt_CRUD extends Component {
 
   onChangeStartDay = (value, dateString) => {
     let data = this.state.data
-    console.log("Pre: ")
-    console.log(data)
-    if(this.state.selectedItem) {
-      data[this.state.selectedItem.id - 1].start = dateString ? new Date(dateString) : this.state.selectedItem.start
-      console.log("Post: ")
+    if(this.state.selectedItem && dateString) {
+      // console.log(data.find(item => item.id === this.state.selectedItem.id))
+      data.find(item => item.id === this.state.selectedItem.id).start = new Date(dateString)
+      // data[this.state.selectedItem.id - 1].start = dateString ? new Date(dateString) : this.state.selectedItem.start
     }
+    console.log(data)
     this.setState({ data: [...this.state.data] });
   }
 
   onChangeEndDay = (value, dateString) => {
     let data = this.state.data
-    if(this.state.selectedItem) 
-      data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+    if(this.state.selectedItem && dateString) {
+      data.find(item => item.id === this.state.selectedItem.id).end = new Date(dateString)
+      // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+    }
     this.setState({ data: [...this.state.data] });
   }
 
