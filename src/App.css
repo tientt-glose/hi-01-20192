@@ -673,3 +673,7 @@ footer .footer-flag {
  }
 }
 
+/* for breadcrumb */
+.ant-breadcrumb {
+  padding: 20px;
+}
