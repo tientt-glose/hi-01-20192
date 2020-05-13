@@ -111,14 +111,32 @@ class Gantt_CRUD extends Component {
     this.delete()
   }
 
-  updateTask = (event) => {
+  // recordUpdateTask = (event) => {
+  //   let data = this.state.data
+  //   let newPercentage = parseInt(event.currentTarget.textContent)
+  //   if(this.state.selectedItem && newPercentage >= 0 && newPercentage <= 100) {
+  //     data.find(item => item.id === this.state.selectedItem.id).percentage = newPercentage
+  //     this.setState({ data: [...this.state.data] });
+  //     // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+  //   } 
+  // }
+
+  recordUpdateTask = (newPercentage) => {
     let data = this.state.data
-    let newPercentage = parseInt(event.currentTarget.textContent)
     if(this.state.selectedItem && newPercentage >= 0 && newPercentage <= 100) {
       data.find(item => item.id === this.state.selectedItem.id).percentage = newPercentage
       this.setState({ data: [...this.state.data] });
-    //   // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+      // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
     } 
+  }
+
+  updateTask = (event) => {
+    // console.log(event.keyCode)
+    // console.log(parseInt(event.currentTarget.textContent))
+    if(event.keyCode === 13 || event.keyCode === 27) {
+      console.log("Got here")
+      this.recordUpdateTask(parseInt(event.currentTarget.textContent))
+    }
   }
 
   render() {
@@ -140,7 +158,8 @@ class Gantt_CRUD extends Component {
             </td>
             <td className="non-header" >{((work.end - work.start)/A_DAY).toFixed(0)}</td>
             <td className="non-header" onClick={() => this.onSelectItem(work)}>
-              <span contenteditable="true" onInput={this.updateTask}>{work.percentage}</span>
+              {/* <span contenteditable="true" onInput={this.recordUpdateTask} >{work.percentage}</span> */}
+              <span contenteditable="true" onKeyDown={this.updateTask}>{work.percentage}</span>
             </td>
           </tr>
         )
