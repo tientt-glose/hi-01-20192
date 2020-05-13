@@ -60,41 +60,42 @@ class Header extends Component {
               </SubMenu>
               
               <SubMenu icon={<VideoCameraAddOutlined />} title="Quản lý drone">
-                <Menu.Item key="setting:1">Quản lý dữ liệu bay</Menu.Item>
-                <Menu.Item key="setting:2">Quản lý lịch sử bay</Menu.Item>
-                <Menu.Item key="setting:3">Quản lý các hành trình bay</Menu.Item>
-                <Menu.Item key="setting:4">Quản lý các drone đang hoạt động trên bản đồ</Menu.Item>
-                <Menu.Item key="setting:5">Quản lý tổ đội bay</Menu.Item>
-                <Menu.Item key="setting:6">Quản lý thiết bị drone và thiết bị đi kèm</Menu.Item>
+                <Menu.Item key="setting:4">Quản lý dữ liệu bay</Menu.Item>
+                <Menu.Item key="setting:5">Quản lý lịch sử bay</Menu.Item>
+                <Menu.Item key="setting:6">Quản lý các hành trình bay</Menu.Item>
+                <Menu.Item key="setting:7">Quản lý các drone đang hoạt động trên bản đồ</Menu.Item>
+                <Menu.Item key="setting:8">Quản lý tổ đội bay</Menu.Item>
+                <Menu.Item key="setting:9">Quản lý thiết bị drone và thiết bị đi kèm</Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<WarningOutlined />} title="Phân tích nguy cơ">
-                <Menu.Item key="setting:1">Xem danh sách thành phần lưới điện</Menu.Item>
-                <Menu.Item key="setting:2">Xem danh sách các nguy cơ tiềm ẩn</Menu.Item>
-                <Menu.Item key="setting:3">Gửi cảnh báo và yêu cầu kiểm tra</Menu.Item>
+                <Menu.Item key="setting:10">Xem danh sách thành phần lưới điện</Menu.Item>
+                <Menu.Item key="setting:11">Xem danh sách các nguy cơ tiềm ẩn</Menu.Item>
+                <Menu.Item key="setting:12">Gửi cảnh báo và yêu cầu kiểm tra</Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<ClusterOutlined />} title="Giám sát trung tâm">
-                <Menu.Item key="setting:1">Quản lý thành phần lưới điện</Menu.Item>
-                <Menu.Item key="setting:2">Tiếp nhận thông tin cảnh báo, báo cáo</Menu.Item>
-                <Menu.Item key="setting:3">Xem danh sách toàn bộ các đợt kiểm tra</Menu.Item>
-                <Menu.Item key="setting:4">Tạo đợt kiểm tra thủ công</Menu.Item>
-                <Menu.Item key="setting:5">Tạo đợt kiểm tra tự động</Menu.Item>
+                <Menu.Item key="setting:13">Quản lý thành phần lưới điện</Menu.Item>
+                <Menu.Item key="setting:14">Tiếp nhận thông tin cảnh báo, báo cáo</Menu.Item>
+                <Menu.Item key="setting:15">Xem danh sách toàn bộ các đợt kiểm tra</Menu.Item>
+                <Menu.Item key="setting:16">Tạo đợt kiểm tra thủ công</Menu.Item>
+                <Menu.Item key="setting:17">Tạo đợt kiểm tra tự động</Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<FileDoneOutlined />} title="Báo cáo kiểm tra">
-                <Menu.Item key="setting:1">Xem danh sách các đợt kiểm tra</Menu.Item>
-                <Menu.Item key="setting:2">Quản lý vị trí của các đợt kiểm tra trên bản đồ</Menu.Item>
-                <Menu.Item key="setting:3">Tạo báo cáo kết quả kiểm tra theo mẫu</Menu.Item>
+                <Menu.Item key="setting:18">Xem danh sách các đợt kiểm tra</Menu.Item>
+                <Menu.Item key="setting:19">Quản lý vị trí của các đợt kiểm tra trên bản đồ</Menu.Item>
+                <Menu.Item key="setting:20">Tạo báo cáo kết quả kiểm tra theo mẫu</Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<ProjectOutlined />} title="Giám sát thi công">
-                <Menu.Item key="setting:1">Xem danh sách công trình</Menu.Item>
-                <Menu.Item key="setting:2">
+                <Menu.Item key="setting:21">Xem danh sách công trình</Menu.Item>
+                <Menu.Item key="setting:22">
                   <Link to={`/gantt`}>Thống kê tiến độ</Link>
+                  {/* Cái link này đáng lẽ phải dẫn tới trang của Tú */}
                 </Menu.Item>
-                <Menu.Item key="setting:3">Tạo công trình</Menu.Item>
-                <Menu.Item key="setting:4">Tạo báo cáo kết quả tiến độ theo mẫu</Menu.Item>
+                <Menu.Item key="setting:23">Tạo công trình</Menu.Item>
+                <Menu.Item key="setting:24">Tạo báo cáo kết quả tiến độ theo mẫu</Menu.Item>
               </SubMenu>
 
               <Menu.Item icon={<InfoCircleOutlined />}></Menu.Item>
