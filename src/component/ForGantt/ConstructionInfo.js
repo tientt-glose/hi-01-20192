@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import { Card } from 'antd';
-
-const { Meta } = Card;
+// const { Meta } = Card;
 
 class ConstructionInfo extends Component {
 
@@ -47,22 +45,30 @@ class ConstructionInfo extends Component {
     return (
       <div id="constructionInfo">
         {/* <Card size="small" title={this.state.work.name}>
-          <p>: {this.state.work.leader}</p>
+          <p>Người phụ trách: {this.state.work.leader}</p>
           <p>{this.state.work.start} - {this.state.work.end}</p>
           <p>Thời gian dự định: {this.state.work.duration}</p>
           <p>Số kỹ sư tham gia: {this.state.work.members}</p>
         </Card> */}
 
-        <Card
-          style={{ width: 400 }} cover = {<img alt="construction_site" style={{height: "180px"}} src={this.state.work.imgUrl} />}
+        {/* <Card
+          style={{ width: 260 }} cover = {<img alt="construction_site" style={{height: "180px"}} src={this.state.work.imgUrl} />}
           tabList={this.state.tabList}
-          activeTabKey={this.state.noTitleKey}
+          // activeTabKey={this.state.noTitleKey}
           onTabChange={key => {
             this.onTabChange(key, 'key');
           }}
         >
           {this.state.contentList[this.state.key]}
-        </Card>
+        </Card> */}
+        <img src={this.state.work.imgUrl} alt="construction_site_img" style={{width: "100%"}}/>
+        <div style={{"font-size": "12px", "margin-top": "4px", "margin-left": "7px" }}>
+          <p>Người phụ trách: {this.state.work.leader}</p>
+          <p>{this.state.work.start} - {this.state.work.end}</p>
+          <p>Thời gian dự định: {this.state.work.duration}</p>
+          <p>Số kỹ sư tham gia: {this.state.work.members}</p>
+        </div>
+        
       </div>
     );
   }

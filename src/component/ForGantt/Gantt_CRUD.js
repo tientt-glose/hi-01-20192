@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, DatePicker } from 'antd';
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import TimeLine from 'react-gantt-timeline';
 import './Gantt.css';
@@ -22,7 +23,7 @@ class Gantt_CRUD extends Component {
 
   getRandomDate() {
     let result = new Date();
-    result.setDate(result.getDate() + Math.random() * 10);
+    result.setDate(result.getDate() + Math.random() * 10 + 1);
     return result;
   }
   getRandomColor() {
@@ -105,6 +106,11 @@ class Gantt_CRUD extends Component {
     this.setState({ data: [...this.state.data] });
   }
 
+  functionForDeleteButton = (work) => {
+    this.onSelectItem(work)
+    this.delete()
+  }
+
   render() {
     const printDateAndDuration = 
       this.state.data.map(work => {
@@ -123,6 +129,7 @@ class Gantt_CRUD extends Component {
               <DatePicker value={moment(work.end, dateFormat)} format={dateFormat} onChange={this.onChangeEndDay} bordered={false}/>
             </td>
             <td className="non-header" >{((work.end - work.start)/A_DAY).toFixed(0)}</td>
+            {/* <td className="non-header"></td> */}
           </tr>
         )
       })
@@ -130,29 +137,20 @@ class Gantt_CRUD extends Component {
     return (
       <div>
         <div className="app-container">
-          <div id="ganttButtonGroup">
-            <Button onClick={this.addTask}>Add</Button>
-            <Button onClick={this.delete}>Delete</Button>
+          <div>
+            <Button type="primary" id="ganttAddButton" icon={<PlusOutlined />} onClick={this.addTask} shape="circle"></Button>
+            <Button id="ganttDeleteButton" icon= {<MinusOutlined />} onClick={this.delete} shape="circle" danger></Button>
           </div>
           <table id="dateForGantt"> 
             <tbody>
               <tr>
                 <td className="header">Start date</td>
                 <td className="header">End date</td>
-                <td className="header">Duration</td>
+                <td className="header" style={{width: "1px"}}>Duration</td>
+                {/* <td className="header"></td> */}
               </tr>
               {printDateAndDuration}
             </tbody>
-            {/* <tr>
-              <td className="non-header">01/01/2020</td>
-              <td className="non-header">01/02/2020</td>
-              <td className="non-header">31</td>
-            </tr>
-            <tr>
-              <td className="non-header">01/01/2020</td>
-              <td className="non-header">01/02/2020</td>
-              <td className="non-header">31</td>
-            </tr> */}
           </table>
           <div className="time-line-container">
             <TimeLine

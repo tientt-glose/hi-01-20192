@@ -35,7 +35,8 @@ html {
   font-family: Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   width: 25%;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  /* height:100%; */
 }
 
 #dateForGantt .header {
@@ -57,6 +58,10 @@ html {
   height: 19px;
 }
 
+/* #dateForGantt .non-header .ant-button{
+  width: 10px;
+} */
+
 #dateForGantt .non-header .danger{
   color: red;
 }
@@ -74,23 +79,33 @@ html {
   float: left;
   width: 75%;
   height: 100%;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .time-line-container .timeLine-side-task-row {
   height: 21px;
 }
 
-/* #ganttButtonGroup {
-  display: block;
+#ganttAddButton {
+  z-index: 9999;
+  position: fixed;
+  /* align-items: center; */
+  line-height: 18px;
+  /* height: 45px; */
+  /* width: 45px; */
+  left: 95%;
+  top: 70%;
+  transform: translate(-50%,-50%);
+  /* border-radius: 95%; */
 }
 
-#ganttButtonGroup button {
-  float: left;
-  margin-left: 10px;
-  margin-right: 10px;
-  line-height: 10px;
-} */
+#ganttDeleteButton {
+  z-index: 9999;
+  position: fixed;
+  left: 95%;
+  top: 77%;
+  transform: translate(-50%,-50%);
+}
 
 .list {
   width: 200px;
