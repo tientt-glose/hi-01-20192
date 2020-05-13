@@ -53,8 +53,9 @@ html {
 }
 
 #dateForGantt .non-header {
-  border-bottom: 1px solid silver;
-  border-left: 1.5px solid silver;
+  border-bottom: 1px solid silver!important;
+  border-left: 1.5px solid silver!important;
+  border-right: 1.5px solid silver!important;
   height: 19px;
 }
 
@@ -69,6 +70,10 @@ html {
 #dateForGantt .ant-picker {
   height: 9.5px;
   /* border: transparent; */
+}
+
+#dateForGantt .ant-input-number .ant-input-number-sm {
+  height: 9.5px!important; 
 }
 
 .time-line-container {

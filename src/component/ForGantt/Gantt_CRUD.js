@@ -6,7 +6,7 @@ import TimeLine from 'react-gantt-timeline';
 import './Gantt.css';
 
 const A_DAY = 60*60*24*1000;
-const dateFormat = 'YYYY/MM/DD';
+const dateFormat = 'MM/DD/YYYY';
 
 class Gantt_CRUD extends Component {
   constructor(props) {
@@ -111,6 +111,16 @@ class Gantt_CRUD extends Component {
     this.delete()
   }
 
+  updateTask = (event) => {
+    let data = this.state.data
+    let newPercentage = parseInt(event.currentTarget.textContent)
+    if(this.state.selectedItem && newPercentage >= 0 && newPercentage <= 100) {
+      data.find(item => item.id === this.state.selectedItem.id).percentage = newPercentage
+      this.setState({ data: [...this.state.data] });
+    //   // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+    } 
+  }
+
   render() {
     const printDateAndDuration = 
       this.state.data.map(work => {
@@ -129,7 +139,9 @@ class Gantt_CRUD extends Component {
               <DatePicker value={moment(work.end, dateFormat)} format={dateFormat} onChange={this.onChangeEndDay} bordered={false}/>
             </td>
             <td className="non-header" >{((work.end - work.start)/A_DAY).toFixed(0)}</td>
-            {/* <td className="non-header"></td> */}
+            <td className="non-header" onClick={() => this.onSelectItem(work)}>
+              <span contenteditable="true" onInput={this.updateTask}>{work.percentage}</span>
+            </td>
           </tr>
         )
       })
@@ -147,7 +159,7 @@ class Gantt_CRUD extends Component {
                 <td className="header">Start date</td>
                 <td className="header">End date</td>
                 <td className="header" style={{width: "1px"}}>Duration</td>
-                {/* <td className="header"></td> */}
+                <td className="header">%</td>
               </tr>
               {printDateAndDuration}
             </tbody>

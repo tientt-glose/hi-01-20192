@@ -74,7 +74,7 @@ class GanttChartPage extends Component {
         end: d8,
         name: 'Demo Task 4',
         color: 'blue',
-        percentage: 0
+        percentage: 20
       }
     ];
     for (let i = 5; i < 27; i++) {
