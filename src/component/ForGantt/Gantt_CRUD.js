@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Button, DatePicker } from 'antd';
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import TimeLine from 'react-gantt-timeline';
 import './Gantt.css';
 
 const A_DAY = 60*60*24*1000;
-const dateFormat = 'YYYY/MM/DD';
+const dateFormat = 'MM/DD/YYYY';
 
 class Gantt_CRUD extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Gantt_CRUD extends Component {
 
   getRandomDate() {
     let result = new Date();
-    result.setDate(result.getDate() + Math.random() * 10);
+    result.setDate(result.getDate() + Math.random() * 10 + 1);
     return result;
   }
   getRandomColor() {
@@ -105,6 +106,39 @@ class Gantt_CRUD extends Component {
     this.setState({ data: [...this.state.data] });
   }
 
+  functionForDeleteButton = (work) => {
+    this.onSelectItem(work)
+    this.delete()
+  }
+
+  // recordUpdateTask = (event) => {
+  //   let data = this.state.data
+  //   let newPercentage = parseInt(event.currentTarget.textContent)
+  //   if(this.state.selectedItem && newPercentage >= 0 && newPercentage <= 100) {
+  //     data.find(item => item.id === this.state.selectedItem.id).percentage = newPercentage
+  //     this.setState({ data: [...this.state.data] });
+  //     // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+  //   } 
+  // }
+
+  recordUpdateTask = (newPercentage) => {
+    let data = this.state.data
+    if(this.state.selectedItem && newPercentage >= 0 && newPercentage <= 100) {
+      data.find(item => item.id === this.state.selectedItem.id).percentage = newPercentage
+      this.setState({ data: [...this.state.data] });
+      // data[this.state.selectedItem.id - 1].end = dateString ? new Date(dateString) : this.state.selectedItem.end
+    } 
+  }
+
+  updateTask = (event) => {
+    // console.log(event.keyCode)
+    // console.log(parseInt(event.currentTarget.textContent))
+    if(event.keyCode === 13 || event.keyCode === 27) {
+      console.log("Got here")
+      this.recordUpdateTask(parseInt(event.currentTarget.textContent))
+    }
+  }
+
   render() {
     const printDateAndDuration = 
       this.state.data.map(work => {
@@ -123,6 +157,10 @@ class Gantt_CRUD extends Component {
               <DatePicker value={moment(work.end, dateFormat)} format={dateFormat} onChange={this.onChangeEndDay} bordered={false}/>
             </td>
             <td className="non-header" >{((work.end - work.start)/A_DAY).toFixed(0)}</td>
+            <td className="non-header" onClick={() => this.onSelectItem(work)}>
+              {/* <span contenteditable="true" onInput={this.recordUpdateTask} >{work.percentage}</span> */}
+              <span contenteditable="true" onKeyDown={this.updateTask}>{work.percentage}</span>
+            </td>
           </tr>
         )
       })
@@ -130,25 +168,20 @@ class Gantt_CRUD extends Component {
     return (
       <div>
         <div className="app-container">
+          <div>
+            <Button type="primary" id="ganttAddButton" icon={<PlusOutlined />} onClick={this.addTask} shape="circle"></Button>
+            <Button id="ganttDeleteButton" icon= {<MinusOutlined />} onClick={this.delete} shape="circle" danger></Button>
+          </div>
           <table id="dateForGantt"> 
             <tbody>
               <tr>
                 <td className="header">Start date</td>
                 <td className="header">End date</td>
-                <td className="header">Duration</td>
+                <td className="header" style={{width: "1px"}}>Duration</td>
+                <td className="header">%</td>
               </tr>
               {printDateAndDuration}
             </tbody>
-            {/* <tr>
-              <td className="non-header">01/01/2020</td>
-              <td className="non-header">01/02/2020</td>
-              <td className="non-header">31</td>
-            </tr>
-            <tr>
-              <td className="non-header">01/01/2020</td>
-              <td className="non-header">01/02/2020</td>
-              <td className="non-header">31</td>
-            </tr> */}
           </table>
           <div className="time-line-container">
             <TimeLine
@@ -161,10 +194,7 @@ class Gantt_CRUD extends Component {
             />
           </div>
         </div>
-          <div id="ganttButtonGroup">
-            <Button onClick={this.addTask}>Add</Button>
-            <Button onClick={this.delete}>Delete</Button>
-          </div>
+        
         {/* <div>
           this is a date
           {`${this.state.data[0].start}`}
