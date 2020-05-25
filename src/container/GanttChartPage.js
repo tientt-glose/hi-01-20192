@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 
 
 import Header from '../component/Header'
+import Footer from '../component/Footer'
 import GanttCRUD from '../component/ForGantt/Gantt_CRUD'
 import BreadCrumbForGantt from '../component/ForGantt/BreadCrumbForGantt'
 import ConstructionInfo from '../component/ForGantt/ConstructionInfo'
@@ -67,7 +68,7 @@ class GanttChartPage extends Component {
         name: 'Demo Task 3',
         color: 'red',
         percentage: 0
-      }, 
+      },
       {
         id: 4,
         start: d7,
@@ -120,21 +121,21 @@ class GanttChartPage extends Component {
     }
     return color;
   }
-  
+
   render() {
     return (
       <div>
         <Header />
         <BreadCrumbForGantt />
-        <Layout style={{"background-color": "white"}}>
-          <Sider style={{"background-color": "white", height: "100%" }}><ConstructionInfo work = {this.state.work} /></Sider>
-          <Content style={{"background-color": "white"}}><GanttCRUD data = {this.state.data} addTask = {this.addTask} /> </Content>
+        <Layout style={{ "background-color": "white" }}>
+          <Sider style={{ "background-color": "white", height: "100%" }}><ConstructionInfo work={this.state.work} /></Sider>
+          <Content style={{ "background-color": "white" }}><GanttCRUD data={this.state.data} addTask={this.addTask} /> </Content>
         </Layout>
         {/* <ConstructionInfo 
           work = {this.state.work} />
         <GanttCRUD
           data = {this.state.data} />  */}
-
+        <Footer />
       </div>
     );
   }

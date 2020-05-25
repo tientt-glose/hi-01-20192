@@ -681,3 +681,9 @@ footer .footer-flag {
 /* #constructionInfo .ant-card .ant-card-head{
   font-size: 15px;
 } */
+
+/* for card */
+.site-card-wrapper {
+  background: #ececec;
+  padding: 30px;
+}

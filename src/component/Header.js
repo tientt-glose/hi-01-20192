@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Row, Col } from 'antd';
-import { EyeOutlined, VideoCameraAddOutlined, WarningOutlined, ProjectOutlined, FileDoneOutlined, ClusterOutlined,
-         SmileOutlined, BellOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import {
+  EyeOutlined, VideoCameraAddOutlined, WarningOutlined, ProjectOutlined, FileDoneOutlined, ClusterOutlined,
+  SmileOutlined, BellOutlined, InfoCircleOutlined
+} from '@ant-design/icons';
 
 const LOGO_URL = 'https://i.ibb.co/DzC39Tm/EFD-Egypt-50646-1577276120-og-1.jpg';
 // const LOGO_URL = 'https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_EFD_induction.svg';
 
-const { SubMenu } = Menu 
+const { SubMenu } = Menu
 
 class Header extends Component {
 
@@ -35,7 +37,7 @@ class Header extends Component {
             </Link>
           </Col>
           <Col span={18}>
-            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{float: 'right'}}>
+            <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" style={{ float: 'right' }}>
               {/* <Menu.Item key="mail" icon={<MailOutlined />}>
                 Navigation One
               </Menu.Item>
@@ -58,7 +60,7 @@ class Header extends Component {
                 <Menu.Item key="setting:2">Xem danh sách drone xung quanh</Menu.Item>
                 <Menu.Item key="setting:3">Thiết lập hành trình bay tự động</Menu.Item>
               </SubMenu>
-              
+
               <SubMenu icon={<VideoCameraAddOutlined />} title="Quản lý drone">
                 <Menu.Item key="setting:4">Quản lý dữ liệu bay</Menu.Item>
                 <Menu.Item key="setting:5">Quản lý lịch sử bay</Menu.Item>
@@ -89,7 +91,9 @@ class Header extends Component {
               </SubMenu>
 
               <SubMenu icon={<ProjectOutlined />} title="Giám sát thi công">
-                <Menu.Item key="setting:21">Xem danh sách công trình</Menu.Item>
+                <Menu.Item key="setting:21">
+                  <Link to={`/construction-list`}>Xem danh sách công trình</Link>
+                </Menu.Item>
                 <Menu.Item key="setting:22">
                   <Link to={`/gantt`}>Thống kê tiến độ</Link>
                   {/* Cái link này đáng lẽ phải dẫn tới trang của Tú */}
@@ -102,8 +106,8 @@ class Header extends Component {
               <Menu.Item icon={<BellOutlined />}></Menu.Item>
               <Menu.Item icon={<SmileOutlined />}></Menu.Item>
 
-            
-              
+
+
             </Menu>
           </Col>
         </Row>

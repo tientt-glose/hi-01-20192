@@ -4,7 +4,7 @@ import { Breadcrumb } from 'antd';
 import { HomeOutlined, ProjectOutlined } from '@ant-design/icons';
 // css in App.css
 
-class BreadCrumbForGantt extends Component {
+class BreadCrumbForConstructionList extends Component {
   render() {
     return (
       <div>
@@ -15,17 +15,11 @@ class BreadCrumbForGantt extends Component {
               <span style={{color: '#40a9ff'}}> Home </span>
             </Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <Link to={`/construction-list`}> 
-              <ProjectOutlined />
-              <span style={{color: '#40a9ff'}}> Xem danh sách công trình </span>
-            </Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>Công trình A</Breadcrumb.Item>
+          <Breadcrumb.Item> <ProjectOutlined /> Xem danh sách công trình</Breadcrumb.Item>
         </Breadcrumb>
       </div>
     );
   }
 }
 
-export default BreadCrumbForGantt;
+export default BreadCrumbForConstructionList;
