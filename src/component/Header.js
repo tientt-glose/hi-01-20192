@@ -98,7 +98,9 @@ class Header extends Component {
                   <Link to={`/gantt`}>Thống kê tiến độ</Link>
                   {/* Cái link này đáng lẽ phải dẫn tới trang của Tú */}
                 </Menu.Item>
-                <Menu.Item key="setting:23">Tạo công trình</Menu.Item>
+                <Menu.Item key="setting:23">
+                  <Link to={`/construction-add`}>Tạo công trình</Link>
+                </Menu.Item>
                 <Menu.Item key="setting:24">Tạo báo cáo kết quả tiến độ theo mẫu</Menu.Item>
               </SubMenu>
 
