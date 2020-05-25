@@ -5,6 +5,8 @@ import './App.css';
 import MainPage from './container/MainPage'
 import GanttChartPage from './container/GanttChartPage'
 import ConstructionListPage from './container/ConstructionListPage';
+import ConstructionAdd from './container/ConstructionAdd';
+
 
 class App extends React.Component {
   render() {
@@ -20,10 +22,15 @@ class App extends React.Component {
             render={(props) => {
               return <GanttChartPage />
             }} />
-          
+
           <Route exact path='/construction-list'
             render={(props) => {
               return <ConstructionListPage />
+            }} />
+
+          <Route exact path='/construction-add'
+            render={(props) => {
+              return <ConstructionAdd />
             }} />
         </BrowserRouter>
       </div>

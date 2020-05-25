@@ -15,7 +15,9 @@ class ConstructionListPage extends Component {
         <BreadCrumbForConstructionList />
         <div className="site-card-wrapper">
           <div style={{ marginBottom: 16, textAlign: 'right' }}>
-            <Button type="primary" size="large" shape="round" icon={<PlusOutlined />}>Tạo công trình</Button>
+            <Link to={`/construction-add`}>
+              <Button type="primary" size="large" shape="round" icon={<PlusOutlined />}>Tạo công trình</Button>
+            </Link>
           </div>
           <Row gutter={16}>
             <Col span={8}>
