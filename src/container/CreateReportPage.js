@@ -4,6 +4,7 @@ import {
   FormGroup, Label, Input,
   Button, FormText 
 } from 'reactstrap';
+import '../component/ForReport/Report.css';
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -30,8 +31,13 @@ class CreateReportPage extends Component {
       <div>
         <Header />
         <BreadCrumbForCreateReport />
-
         <div className="site-card-wrapper">
+          <div
+          style={{
+            backgroundColor: 'white',
+            backgroundSize: "cover",
+          }}
+          >
           <Container className="App">
             <h2>Báo cáo kiểm tra định kỳ</h2>
             <Form>
@@ -125,6 +131,7 @@ class CreateReportPage extends Component {
               <Button>Hoàn thiện báo cáo</Button>
             </Form>
           </Container>
+        </div>
         </div>
         <Footer />
       </div>
