@@ -7,6 +7,8 @@ import GanttChartPage from './container/GanttChartPage'
 import ConstructionListPage from './container/ConstructionListPage';
 import ChooseReportPage from './container/ChooseReportPage';
 import CreateReportPage from './container/CreateReportPage';
+import ConstructionAdd from './container/ConstructionAdd';
+
 
 class App extends React.Component {
   render() {
@@ -22,7 +24,7 @@ class App extends React.Component {
             render={(props) => {
               return <GanttChartPage />
             }} />
-          
+
           <Route exact path='/construction-list'
             render={(props) => {
               return <ConstructionListPage />
@@ -36,6 +38,11 @@ class App extends React.Component {
           <Route exact path='/create-report'
             render={(props) => {
               return <CreateReportPage />
+            }} />
+
+          <Route exact path='/construction-add'
+            render={(props) => {
+              return <ConstructionAdd />
             }} />
         </BrowserRouter>
       </div>
