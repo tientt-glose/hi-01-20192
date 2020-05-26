@@ -24,7 +24,7 @@ class BreadCrumbForChooseReport extends Component {
           <Breadcrumb.Item>
             <Link to={`/create-report`}> 
               <ProjectOutlined />
-              <span style={{color: '#40a9ff'}}> Tạo mẫu báo cáo mới </span>
+              <span style={{color: '#40a9ff'}}> Tạo báo cáo mới </span>
             </Link>
           </Breadcrumb.Item>
         </Breadcrumb>
