@@ -90,14 +90,15 @@ class Header extends Component {
                 <Menu.Item key="setting:20">Tạo báo cáo kết quả kiểm tra theo mẫu</Menu.Item>
               </SubMenu>
 
-              <SubMenu icon={<ProjectOutlined />} title="Giám sát thi công">
+              {/* <Link to={`/construction-list`}>Xem danh sách công trình</Link> */}
+              <SubMenu icon={<ProjectOutlined />} title={<Link to={`/module`}><span>Giám sát thi công</span></Link>}>
                 <Menu.Item key="setting:21">
                   <Link to={`/construction-list`}>Xem danh sách công trình</Link>
                 </Menu.Item>
-                <Menu.Item key="setting:22">
+                {/* <Menu.Item key="setting:22">
                   <Link to={`/gantt`}>Thống kê tiến độ</Link>
-                  {/* Cái link này đáng lẽ phải dẫn tới trang của Tú */}
-                </Menu.Item>
+                  Cái link này đáng lẽ phải dẫn tới trang của Tú
+                </Menu.Item> */}
                 <Menu.Item key="setting:23">
                   <Link to={`/construction-add`}>Tạo công trình</Link>
                 </Menu.Item>
