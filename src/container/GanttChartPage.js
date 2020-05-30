@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout } from 'antd';
+import { Layout, Card, Col, Row,} from 'antd';
 
 
 import Header from '../component/Header'
@@ -7,6 +7,8 @@ import Footer from '../component/Footer'
 import GanttCRUD from '../component/ForGantt/Gantt_CRUD'
 import BreadCrumbForGantt from '../component/ForGantt/BreadCrumbForGantt'
 import ConstructionInfo from '../component/ForGantt/ConstructionInfo'
+import PieChart from '../component/ForChart/PieChart'
+import ColChart from '../component/ForChart/ColChart'
 
 const { Sider, Content } = Layout;
 
@@ -135,6 +137,41 @@ class GanttChartPage extends Component {
           work = {this.state.work} />
         <GanttCRUD
           data = {this.state.data} />  */}
+        <br/> <br/>
+        {/* Top-Card */}
+        <div className="top-card-wrapper">
+          <Row gutter={24}>
+            <Col span={6}>
+              <Card style={{ background: '#95de64' }} title="Đang thực hiện" bordered={false}>
+                <h1>20</h1>công việc
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card style={{ background: '#fff566' }} title="Chờ review" bordered={false}>
+                  <h1>20</h1>công việc
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card style={{ background: '#ff9c6e' }} title="Hoàn thành" bordered={false}>
+                <h1>20</h1>công việc
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card style={{ background: 'red' }} title="Quá hạn" bordered={false}>
+                <h1>5</h1>công việc
+              </Card>
+            </Col>
+          </Row>
+        </div>
+
+<Row gutter={[8, 16]}>
+                            <Col span={12} >
+                                <PieChart />
+                            </Col>
+                            <Col span={12} >
+                                <ColChart />
+                            </Col>
+                        </Row>
         <Footer />
       </div>
     );
