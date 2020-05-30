@@ -8,6 +8,7 @@ import ConstructionListPage from './container/ConstructionListPage';
 import ChooseReportPage from './container/ChooseReportPage';
 import CreateReportPage from './container/CreateReportPage';
 import ConstructionAdd from './container/ConstructionAdd';
+import ModuleMainPage from './container/ModuleMainPage';
 
 
 class App extends React.Component {
@@ -18,6 +19,11 @@ class App extends React.Component {
           <Route exact path='/'
             render={(props) => {
               return <MainPage />
+            }} />
+
+          <Route exact path='/module'
+            render={(props) => {
+              return <ModuleMainPage />
             }} />
 
           <Route exact path='/gantt'
