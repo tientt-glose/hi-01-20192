@@ -15,7 +15,7 @@ class ConstructionListPage extends Component {
         <Header />
         <BreadCrumbForConstructionList />
         <div className="site-card-wrapper">
-        <Divider>Lựa chọn công trình để thiết lập tiến độ</Divider>
+        <Divider>Lựa chọn công trình để thiết lập tiến độ và xem thống kê tiến độ</Divider>
         <Search placeholder="Nhập tên công trình cần tìm kiếm" enterButton />
           <div style={{ marginTop: 16, marginBottom: 16, textAlign: 'right' }}>
             <Link to={`/construction-add`}>
