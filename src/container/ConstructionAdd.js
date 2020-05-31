@@ -79,7 +79,7 @@ class ConstructionAdd extends Component {
             rules={[
               {
                 required: true,
-                message: 'Hãy gõ tên công trình!',
+                message: 'Hãy chọn loại công trình!',
               },
             ]}
           >
