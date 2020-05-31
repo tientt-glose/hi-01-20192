@@ -30,31 +30,32 @@ class ModuleMainPage extends Component {
           </Row>
           <Divider>Bảng chức năng</Divider>
           <Search placeholder="Nhập chức năng cần tìm kiếm" enterButton />
-          <div style={{ marginTop: 16}}>
-          <Collapse defaultActiveKey={['1']} >
-            <Panel header="Chức năng sử dụng gần đây" key="1">
-              <p><Link to={`/construction-add`}>Tạo công trình</Link></p>
-              <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra định kì</Link></p>
-            </Panel>
-            <Panel header="Nhóm chức năng thiết lập tiến độ" key="2">
-              <p><Link to={`/construction-add`}>Tạo công trình</Link></p>
-              <p><Link to={`/construction-list`}>Thiết lập tiến độ công trình</Link></p>
-            </Panel>
-            <Panel header="Nhóm chức năng thống kê tiến độ" key="3">
-              <p>Xem tiến độ toàn thể</p>
-              <p>Đang phát triển</p>
-            </Panel>
-            <Panel header="Nhóm chức năng tạo và kết xuất báo cáo" key="4">
-              <p><Link to={`/choose-report`}>Tạo báo cáo kết quả tiến độ theo mẫu</Link></p>
-              <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra định kì</Link></p>
-              <p>Tạo báo cáo tiến độ hàng ngày</p>
-              <p>Tạo báo cáo dọn dẹp hành lang tuyến</p>
-              <p>Tạo báo cáo sửa chữa bộ phận</p>
-              <p>Tạo báo cáo kiểm tra chức năng</p>
-              <p>Tạo báo cáo lắp đặt thành phần mới</p>
-              <p>Tạo mẫu báo cáo mới</p>
-            </Panel>
-          </Collapse>
+          <div style={{ marginTop: 16 }}>
+            <Collapse defaultActiveKey={['1']} >
+              <Panel header="Chức năng sử dụng gần đây" key="1">
+                <p><Link to={`/construction-add`}>Tạo công trình</Link></p>
+                <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra định kì</Link></p>
+              </Panel>
+              <Panel header="Nhóm chức năng thiết lập tiến độ" key="2">
+                <p><Link to={`/construction-add`}>Tạo công trình</Link></p>
+                <p><Link to={`/construction-list`}>Thiết lập tiến độ công trình</Link></p>
+              </Panel>
+              <Panel header="Nhóm chức năng thống kê tiến độ" key="3">
+                <p><Link to={`/construction-list`}>Xem thống kê tiến độ một công trình</Link></p>
+                <p>Xem tiến độ toàn thể</p>
+                <p>Đang phát triển</p>
+              </Panel>
+              <Panel header="Nhóm chức năng tạo và kết xuất báo cáo" key="4">
+                <p><Link to={`/choose-report`}>Tạo báo cáo kết quả tiến độ theo mẫu</Link></p>
+                <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra định kì</Link></p>
+                <p>Tạo báo cáo tiến độ hàng ngày</p>
+                <p>Tạo báo cáo dọn dẹp hành lang tuyến</p>
+                <p>Tạo báo cáo sửa chữa bộ phận</p>
+                <p>Tạo báo cáo kiểm tra chức năng</p>
+                <p>Tạo báo cáo lắp đặt thành phần mới</p>
+                <p>Tạo mẫu báo cáo mới</p>
+              </Panel>
+            </Collapse>
           </div>
         </div>
         <Footer />

@@ -136,7 +136,7 @@ class Footer extends Component {
                 Copyright©
               </a>
             </span>
-            <span style={{ marginRight: 12 }}>Math with <span role="img" aria-labelledby="double_heart">💕</span> by HI01. Enjoy!</span>
+            <span style={{ marginRight: 12 }}>Make with <span role="img" aria-labelledby="double_heart">💕</span> by HI01. Enjoy!</span>
             {/* <span style={{ marginRight: 12 }}>Footer 20</span> */}
           </Col>
         </Row>
