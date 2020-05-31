@@ -41,6 +41,7 @@ class ModuleMainPage extends Component {
               <p><Link to={`/construction-list`}>Thiết lập tiến độ công trình</Link></p>
             </Panel>
             <Panel header="Nhóm chức năng thống kê tiến độ" key="3">
+              <p><Link to={`/construction-list`}>Xem thống kê tiến độ một công trình</Link></p>
               <p>Xem tiến độ toàn thể</p>
               <p>Đang phát triển</p>
             </Panel>
