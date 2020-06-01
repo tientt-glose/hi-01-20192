@@ -15,7 +15,9 @@ class ChooseReportPage extends Component {
         <BreadCrumbForChooseReport />
         <div className="site-card-wrapper">
           <div style={{ marginBottom: 16, textAlign: 'right' }}>
-            <Button type="primary" size="large" shape="round" icon={<PlusOutlined />}>Tạo mẫu báo cáo</Button>
+            <Link to={`/create-report-template`}>
+              <Button type="primary" size="large" shape="round" icon={<PlusOutlined />}>Tạo mẫu báo cáo</Button>
+            </Link>
           </div>
 
           <Row gutter={16}>

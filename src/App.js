@@ -9,7 +9,9 @@ import ChooseReportPage from './container/ChooseReportPage';
 import CreateReportPage from './container/CreateReportPage';
 import ConstructionAdd from './container/ConstructionAdd';
 import ModuleMainPage from './container/ModuleMainPage';
+import CreateReportTemplate from './container/CreateReportTemplate';
 
+require('./scss/application.scss');
 
 class App extends React.Component {
   render() {
@@ -44,6 +46,11 @@ class App extends React.Component {
           <Route exact path='/create-report'
             render={(props) => {
               return <CreateReportPage />
+            }} />
+
+          <Route exact path='/create-report-template'
+            render={(props) => {
+              return <CreateReportTemplate />
             }} />
 
           <Route exact path='/construction-add'

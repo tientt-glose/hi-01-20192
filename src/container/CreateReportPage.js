@@ -4,7 +4,7 @@ import {
   FormGroup, Label, Input,
   Button, FormText 
 } from 'reactstrap';
-import '../component/ForReport/Report.css';
+import FormBuilder from 'react-form-builder2';
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
