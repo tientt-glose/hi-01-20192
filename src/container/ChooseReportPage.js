@@ -31,39 +31,49 @@ class ChooseReportPage extends Component {
               </Link>
             </Col>
             <Col span={8}>
-              <Card hoverable
-                title="Báo cáo tiến độ hàng ngày" bordered={false}
-                cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-              >
-              </Card>
+              <Link to={`/create-report`}>
+                <Card hoverable
+                  title="Báo cáo tiến độ hàng ngày" bordered={false}
+                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
+                >
+                </Card>
+              </Link>
             </Col>
             <Col span={8}>
-              <Card hoverable
-                title="Báo cáo dọn dẹp hành lang tuyến" bordered={false}
-                cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-              >
-              </Card>
+              <Link to={`/create-report`}>
+                <Card hoverable
+                  title="Báo cáo dọn dẹp hành lang tuyến" bordered={false}
+                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
+                >
+                </Card>
+              </Link>
             </Col>
             <Col span={8} style={{ marginTop: 16 }}>
-              <Card hoverable
-                title="Báo cáo sửa chữa bộ phận" bordered={false}
-                cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-              >
-              </Card>
+              <Link to={`/create-report`}>
+                <Card hoverable
+                  title="Báo cáo sửa chữa bộ phận" bordered={false}
+                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
+                >
+                </Card>
+              </Link>
             </Col>
             <Col span={8} style={{ marginTop: 16 }}>
-              <Card hoverable
-                title="Báo cáo kiểm tra chức năng" bordered={false}
-                cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-              >
-              </Card>
+              <Link to={`/create-report`}>
+                <Card hoverable
+                  title="Báo cáo kiểm tra chức năng" bordered={false}
+                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
+                >
+                </Card>
+              </Link>
             </Col>
             <Col span={8} style={{ marginTop: 16 }}>
-              <Card hoverable
-                title="Báo cáo lắp đặt thành phần mới" bordered={false}
-                cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-              >
-              </Card>
+              <Link to={`/create-report`}>
+                <Card hoverable
+                  title="Báo cáo lắp đặt thành phần mới" bordered={false}
+                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
+                >
+                </Card>
+              </Link>
             </Col>
           </Row>
           <Pagination style={{ marginTop: 16, textAlign: 'center' }} defaultCurrent={1} total={50} />
