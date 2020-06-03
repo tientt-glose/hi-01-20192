@@ -4,7 +4,7 @@ import Header from '../component/Header'
 import Footer from '../component/Footer'
 import BreadCrumbForCreateTemplate from '../component/ForReport/BreadCrumbForCreateTemplate'
 import FormBuilder from 'react-form-builder2';
-import { Button } from 'reactstrap';
+import TemplateBar from '../component/ForReport/TemplateBar'
 
 class CreateReportTemplate extends Component {
   render() {
@@ -12,10 +12,8 @@ class CreateReportTemplate extends Component {
       <div>
         <Header />
         <BreadCrumbForCreateTemplate />
-        <FormBuilder.ReactFormBuilder 
-          
-        />
-        <Button>Hoàn thiện mẫu báo cáo</Button>
+        <TemplateBar />
+        <FormBuilder.ReactFormBuilder />
         <Footer />
       </div>
     );

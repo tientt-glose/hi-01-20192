@@ -4,7 +4,7 @@ import {
   FormGroup, Label, Input,
   Button, FormText 
 } from 'reactstrap';
-import FormBuilder from 'react-form-builder2';
+//import FormBuilder from 'react-form-builder2';
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -31,6 +31,13 @@ class CreateReportPage extends Component {
       <div>
         <Header />
         <BreadCrumbForCreateReport />
+        {/* <FormBuilder.ReactFormGenerator
+          form_action="/path/to/form/submit"
+          form_method="POST"
+          task_id={12} // Used to submit a hidden variable with the id to the form from the database
+          data={JSON_QUESTION_DATA} // Question data
+        /> */}
+
         <div className="site-card-wrapper">
           <div
           style={{
