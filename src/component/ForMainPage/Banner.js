@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 import BannerSVGAnim from './BannerSVGAnim'
 
 class Banner extends Component {
@@ -20,11 +21,12 @@ class Banner extends Component {
             Chức năng sử dụng gần đây...
           </p>
           <div key="button" className="button-wrapper">
-          <a href="http://preview.pro.ant.design" target="_blank" rel="noopener noreferrer">
+          <Link to={`/construction-add`}>
+          {/* <a href="http://preview.pro.ant.design" target="_blank" rel="noopener noreferrer"> */}
             <Button type="primary">
               Tạo công trình
             </Button>
-          </a>
+          </Link>
           <Button style={{ margin: '0 16px' }} type="primary" ghost>
             Kết nối drone
           </Button>

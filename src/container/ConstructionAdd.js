@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Input, Button, DatePicker, InputNumber, Upload, Select } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
+import { Form, Input, Button, DatePicker, InputNumber, Upload, Select, Tooltip } from 'antd';
+import { InboxOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -116,7 +116,16 @@ class ConstructionAdd extends Component {
             <Input />
           </Form.Item>
 
-          <Form.Item name="range-picker" label="Ngày khởi công - Ngày hoàn thành" {...rangeConfig}>
+          <Form.Item
+            name="range-picker"
+            label={
+              <span>
+                Ngày khởi công - Ngày hoàn thành&nbsp;
+                <Tooltip title="Kéo & Chọn để có thể lựa chọn khoảng thời gian bắt đầu kết thúc.">
+                  <QuestionCircleOutlined />
+                </Tooltip>
+              </span>}
+            {...rangeConfig}>
             <RangePicker />
           </Form.Item>
 
