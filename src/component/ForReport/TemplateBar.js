@@ -50,16 +50,19 @@ export default class TemplateBar extends React.Component {
           <div className={modalClass}>
             <div className="modal-dialog">
               <div className="modal-content" style = {{ padding: '30px' }}>
-                <ReactFormGenerator
-                  download_path=""
-                  answer_data={{}}
-                  hide_actions = {true}
-                  variables={this.props.variables}
-                  data={this.state.data} />
+                <div className="modal-body" style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
+                  <ReactFormGenerator
+                    download_path=""
+                    answer_data={{}}
+                    hide_actions = {true}
+                    variables={this.props.variables}
+                    data={this.state.data} />
 
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.saveTemplate.bind(this)}>Lưu mẫu báo cáo</button>
-                  <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.closePreview.bind(this)}>Trở lại</button>
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.saveTemplate.bind(this)}>Lưu mẫu báo cáo</button>
+                    <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.closePreview.bind(this)}>Trở lại</button>
+                  
+                  </div>
                 </div>
               </div>
             </div>
