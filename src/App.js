@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import './App.css';
+import './scss/application.scss';
 import MainPage from './container/MainPage'
 import GanttChartPage from './container/GanttChartPage'
 import ConstructionListPage from './container/ConstructionListPage';
@@ -10,8 +11,6 @@ import CreateReportPage from './container/CreateReportPage';
 import ConstructionAdd from './container/ConstructionAdd';
 import ModuleMainPage from './container/ModuleMainPage';
 import CreateReportTemplate from './container/CreateReportTemplate';
-
-require('./scss/application.scss');
 
 class App extends React.Component {
   render() {

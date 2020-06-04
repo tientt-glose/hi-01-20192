@@ -43,13 +43,13 @@ export default class TemplateBar extends React.Component {
 
     return (
       <div className="clearfix" style={{ margin: '10px', width: '70%' }}>
-        <h4 className="float-left">Preview</h4>
-        <button className="btn btn-primary float-right" style={{ marginRight: '10px' }} onClick={this.showPreview.bind(this)}>Preview Form</button>
+        <h4 className="float-left">Báo cáo kiểm tra định kỳ</h4>
+        <button className="btn btn-primary float-right" style={{ marginRight: '10px' }} onClick={this.showPreview.bind(this)}>Hoàn thiện mẫu báo cáo</button>
 
         { this.state.previewVisible &&
           <div className={modalClass}>
             <div className="modal-dialog">
-              <div className="modal-content">
+              <div className="modal-content" style = {{ padding: '30px' }}>
                 <ReactFormGenerator
                   download_path=""
                   answer_data={{}}
@@ -58,8 +58,8 @@ export default class TemplateBar extends React.Component {
                   data={this.state.data} />
 
                 <div className="modal-footer">
-                  <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.saveTemplate.bind(this)}>Save Template</button>
-                  <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.closePreview.bind(this)}>Close</button>
+                  <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.saveTemplate.bind(this)}>Lưu mẫu báo cáo</button>
+                  <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.closePreview.bind(this)}>Trở lại</button>
                 </div>
               </div>
             </div>
