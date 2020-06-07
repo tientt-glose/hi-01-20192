@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import { ReactFormGenerator, ElementStore } from 'react-form-builder2';
 
 export default class TemplateBar extends React.Component {
@@ -27,6 +28,7 @@ export default class TemplateBar extends React.Component {
 
   saveTemplate() {
     console.log('submit: ', this.state.data);
+    window.location.href = '/create-report';
   }
 
   _onChange(data) {
