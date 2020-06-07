@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import './App.css';
+import './scss/application.scss';
 import MainPage from './container/MainPage'
 import GanttChartPage from './container/GanttChartPage'
 import ConstructionListPage from './container/ConstructionListPage';
@@ -9,7 +10,7 @@ import ChooseReportPage from './container/ChooseReportPage';
 import CreateReportPage from './container/CreateReportPage';
 import ConstructionAdd from './container/ConstructionAdd';
 import ModuleMainPage from './container/ModuleMainPage';
-
+import CreateReportTemplate from './container/CreateReportTemplate';
 
 class App extends React.Component {
   render() {
@@ -44,6 +45,11 @@ class App extends React.Component {
           <Route exact path='/create-report'
             render={(props) => {
               return <CreateReportPage />
+            }} />
+
+          <Route exact path='/create-report-template'
+            render={(props) => {
+              return <CreateReportTemplate />
             }} />
 
           <Route exact path='/construction-add'
