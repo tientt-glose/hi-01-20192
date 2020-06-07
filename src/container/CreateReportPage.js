@@ -323,12 +323,24 @@ class CreateReportPage extends Component {
       <div>
         <Header />
         <BreadCrumbForCreateReport />
-        <FormBuilder.ReactFormGenerator
-          download_path=""
-          answer_data={{}}
-          hide_actions = {true}
-          variables={this.props.variables}
-          data={data} />
+        <div style = {{ paddingLeft: '100px', paddingRight: '100px', paddingTop : '30px', paddingBottom : '30px', backgroundColor:'#A89C94FF'}}>
+          <div style = {{backgroundColor:'#FFFFFF', borderRadius:'25px'}}>
+            <div className="clearfix" style={{ paddingTop:'25px', marginLeft: '30px', width: '95%' }}>
+              <h4 className="float-left">Báo cáo kiểm tra định kỳ</h4>
+            </div>
+            <div style={{padding:'30px'}}>
+              <FormBuilder.ReactFormGenerator
+                download_path=""
+                answer_data={{}}
+                hide_actions = {true}
+                variables={this.props.variables}
+                data={data} />
+            </div>
+            <div className="clearfix" style={{ paddingBottom:'30px', marginLeft: '30px', width: '95%' }}>
+              <button className="btn btn-primary float-right" style={{ marginRight: '10px' }}>Hoàn thiện báo cáo</button>
+            </div>
+          </div>
+        </div>
         <Footer />
       </div>
     );

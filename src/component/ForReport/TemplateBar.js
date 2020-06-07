@@ -28,7 +28,7 @@ export default class TemplateBar extends React.Component {
 
   saveTemplate() {
     console.log('submit: ', this.state.data);
-    window.location.href = '/create-report';
+    window.location.href = '/choose-report';
   }
 
   _onChange(data) {
@@ -45,7 +45,6 @@ export default class TemplateBar extends React.Component {
 
     return (
       <div className="clearfix" style={{ margin: '10px', width: '70%' }}>
-        <h4 className="float-left">Báo cáo kiểm tra định kỳ</h4>
         <button className="btn btn-primary float-right" style={{ marginRight: '10px' }} onClick={this.showPreview.bind(this)}>Hoàn thiện mẫu báo cáo</button>
 
         { this.state.previewVisible &&
