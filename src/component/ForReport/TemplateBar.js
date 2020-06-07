@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
+// import {Redirect} from 'react-router-dom';
 import { ReactFormGenerator, ElementStore } from 'react-form-builder2';
 
 export default class TemplateBar extends React.Component {

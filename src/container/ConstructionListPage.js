@@ -1,102 +1,89 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, Col, Row, Pagination, Button, Divider, Input } from 'antd';
-import { EnvironmentOutlined, FieldTimeOutlined, TeamOutlined, PlusOutlined } from '@ant-design/icons';
+import { Pagination, Button, Divider, Input } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
 import BreadCrumbForConstructionList from '../component/ForConstructionList/BreadCrumbForConstructionList'
+import ConstructionList from '../component/ForConstructionList/ConstructionList'
 
 const { Search } = Input;
 class ConstructionListPage extends Component {
+
+  state =  {
+    searchString: '',
+    allItems: [
+      {
+        title: 'Sửa tụ điện cột F25',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: '458 Minh Khai, Vĩnh Tuy, Hà Nội',
+        time: '16/04/2020 - 01/07/2020',
+        member: '15 kỹ sư'
+      }, 
+      {
+        title: 'Dọn dẹp hành lang tuyến cột A2',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: 'Thư viện Tạ Quang Bửu',
+        time: '08/03/2020 - NA',
+        member: '20 kỹ sư'
+      }, 
+      {
+        title: 'Công trình C',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: 'Địa chỉ',
+        time: 'Ngày khởi công - Ngày hoàn tất',
+        member: 'Số kỹ sư tham gia'
+      }, 
+      {
+        title: 'Công trình D',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: 'Địa chỉ',
+        time: 'Ngày khởi công - Ngày hoàn tất',
+        member: 'Số kỹ sư tham gia'
+      }, 
+      {
+        title: 'Công trình E',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: 'Địa chỉ',
+        time: 'Ngày khởi công - Ngày hoàn tất',
+        member: 'Số kỹ sư tham gia'
+      }, 
+      {
+        title: 'Công trình F',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: 'Địa chỉ',
+        time: 'Ngày khởi công - Ngày hoàn tất',
+        member: 'Số kỹ sư tham gia'
+      }, 
+    ],
+    displayItems: []
+  }
+
+  _onSearchChanged = (event) => {
+    this.setState({ searchString: event.target.value })
+  };
+
   render() {
+    console.log(this.state.searchString)
+    const displayedProject = this.state.allItems.filter(
+      item => 
+        item.title.toLowerCase().includes(this.state.searchString.toLowerCase()) ||
+        item.address.toLowerCase().includes(this.state.searchString.toLowerCase())
+    )
     return (
       <div>
         <Header />
         <BreadCrumbForConstructionList />
         <div className="site-card-wrapper">
         <Divider>Lựa chọn công trình để thiết lập tiến độ và xem thống kê tiến độ</Divider>
-        <Search placeholder="Nhập tên công trình cần tìm kiếm" enterButton />
+        <Search placeholder="Nhập tên công trình cần tìm kiếm" enterButton onChange={this._onSearchChanged} />
           <div style={{ marginTop: 16, marginBottom: 16, textAlign: 'right' }}>
             <Link to={`/construction-add`}>
-              <Button type="primary" size="large" shape="round" icon={<PlusOutlined />}>Tạo công trình</Button>
+              <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo công trình</Button>
             </Link>
           </div>
-          <Row gutter={16}>
-            <Col span={8}>
-              <Link to={`/gantt`}>
-                <Card hoverable
-                  title="Sửa tụ điện cột F25" bordered={false}
-                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-                >
-
-                  <p><EnvironmentOutlined /> 458 Minh Khai, Vĩnh Tuy, Hà Nội</p>
-                  <p><FieldTimeOutlined /> 16/04/2020 - 01/07/2020</p>
-                  <p><TeamOutlined /> 15 kỹ sư </p>
-                </Card>
-              </Link>
-            </Col>
-            <Col span={8}>
-              <Link to={`/gantt`}>
-                <Card hoverable
-                  title="Dọn dẹp hành lang tuyến cột A2" bordered={false}
-                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-                >
-                  <p><EnvironmentOutlined /> Thư viện Tạ Quang Bửu</p>
-                  <p><FieldTimeOutlined /> 08/03/2020 - NA</p>
-                  <p><TeamOutlined /> 20 kỹ sư</p>
-                </Card>
-              </Link>
-            </Col>
-            <Col span={8}>
-              <Link to={`/gantt`}>
-                <Card hoverable
-                  title="Công trình C" bordered={false}
-                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-                >
-                  <p><EnvironmentOutlined /> Địa chỉ</p>
-                  <p><FieldTimeOutlined /> Ngày khởi công - Ngày hoàn tất</p>
-                  <p><TeamOutlined /> Số kỹ sư tham gia</p>
-                </Card>
-              </Link>
-            </Col>
-            <Col span={8} style={{ marginTop: 16 }}>
-              <Link to={`/gantt`}>
-                <Card hoverable
-                  title="Công trình D" bordered={false}
-                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-                >
-                  <p><EnvironmentOutlined /> Địa chỉ</p>
-                  <p><FieldTimeOutlined /> Ngày khởi công - Ngày hoàn tất</p>
-                  <p><TeamOutlined /> Số kỹ sư tham gia</p>
-                </Card>
-              </Link>
-            </Col>
-            <Col span={8} style={{ marginTop: 16 }}>
-              <Link to={`/gantt`}>
-                <Card hoverable
-                  title="Công trình E" bordered={false}
-                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-                >
-                  <p><EnvironmentOutlined /> Địa chỉ</p>
-                  <p><FieldTimeOutlined /> Ngày khởi công - Ngày hoàn tất</p>
-                  <p><TeamOutlined /> Số kỹ sư tham gia</p>
-                </Card>
-              </Link>
-            </Col>
-            <Col span={8} style={{ marginTop: 16 }}>
-              <Link to={`/gantt`}>
-                <Card hoverable
-                  title="Công trình F" bordered={false}
-                  cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
-                >
-                  <p><EnvironmentOutlined /> Địa chỉ</p>
-                  <p><FieldTimeOutlined /> Ngày khởi công - Ngày hoàn tất</p>
-                  <p><TeamOutlined /> Số kỹ sư tham gia</p>
-                </Card>
-              </Link>
-            </Col>
-          </Row>
+          <ConstructionList projects = {displayedProject} />
           <Pagination style={{ marginTop: 16, textAlign: 'center' }} defaultCurrent={1} total={50} />
         </div>
         <Footer />
