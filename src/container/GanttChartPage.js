@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Card, Col, Row,} from 'antd';
+import { Layout, Card, Col, Row, Divider} from 'antd';
+
 
 
 import Header from '../component/Header'
@@ -139,6 +140,8 @@ class GanttChartPage extends Component {
           data = {this.state.data} />  */}
         <br/> <br/>
         {/* Top-Card */}
+        
+        <Divider />
         <div className="top-card-wrapper">
           <Row gutter={24}>
             <Col span={6}>
@@ -163,8 +166,7 @@ class GanttChartPage extends Component {
             </Col>
           </Row>
         </div>
-
-<Row gutter={[8, 16]}>
+          <Row gutter={[8, 16]}>
                             <Col span={12} >
                                 <PieChart />
                             </Col>
