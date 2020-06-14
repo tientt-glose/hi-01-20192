@@ -58,11 +58,13 @@ class Header extends Component {
                 </a>
               </Menu.Item> */}
               <SubMenu icon={<EyeOutlined />} title="Điều khiển drone">
-                <Menu.Item key="setting:1">Điều khiển payload</Menu.Item>
+                <Menu.Item key="setting:1">
+                  <a href={`${config.NHOM9}`}>Điều khiển payload</a>
+                </Menu.Item> 
                 <Menu.Item key="setting:2">Xem danh sách drone xung quanh</Menu.Item>
                 <Menu.Item key="setting:3">
                   <a href={`${config.NHOM3}/taotrinhbay.html`}>Thiết lập hành trình bay tự động</a>
-                </Menu.Item>
+                </Menu.Item>  
               </SubMenu>
 
               <SubMenu icon={<VideoCameraAddOutlined />} title="Quản lý drone">
@@ -75,9 +77,13 @@ class Header extends Component {
                 <Menu.Item key="setting:6">
                   <a href={`${config.NHOM3}/thongbao.html`}>Cảnh báo rủi ro</a>
                 </Menu.Item>
-                <Menu.Item key="setting:7">Quản lý các drone đang hoạt động trên bản đồ</Menu.Item>
+                <Menu.Item key="setting:7">
+                  <a href={`${config.NHOM8}/hi08/location`}>Quản lý các drone đang hoạt động trên bản đồ</a>
+                  </Menu.Item>
                 <Menu.Item key="setting:8">Quản lý tổ đội bay</Menu.Item>
-                <Menu.Item key="setting:9">Quản lý thiết bị drone và thiết bị đi kèm</Menu.Item>
+                <Menu.Item key="setting:9">
+                <a href={`${config.NHOM8}/hi08/drones`}>Quản lý thiết bị drone và thiết bị đi kèm</a>
+                </Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<WarningOutlined />} title="Phân tích nguy cơ">

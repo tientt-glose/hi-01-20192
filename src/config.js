@@ -5,9 +5,8 @@ export default {
   NHOM5:  '',
   NHOM6:  '',
   NHOM7:  '',
-  NHOM8:  '',
-  NHOM9:  '',
+  NHOM8:  'https://mighty-ravine-43801.herokuapp.com',
+  NHOM9:  'https://www.figma.com/proto/vtNY9oE4CgxBhNfIQ83mGY/20192?node-id=1%3A2&scaling=scale-down',
   NHOM10: '',
   
 };
-    
