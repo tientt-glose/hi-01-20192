@@ -6,6 +6,8 @@ import {
   SmileOutlined, BellOutlined, InfoCircleOutlined
 } from '@ant-design/icons';
 
+import config from '../config'
+
 const LOGO_URL = 'https://i.ibb.co/DzC39Tm/EFD-Egypt-50646-1577276120-og-1.jpg';
 // const LOGO_URL = 'https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_EFD_induction.svg';
 
@@ -58,13 +60,19 @@ class Header extends Component {
               <SubMenu icon={<EyeOutlined />} title="Điều khiển drone">
                 <Menu.Item key="setting:1">Điều khiển payload</Menu.Item>
                 <Menu.Item key="setting:2">Xem danh sách drone xung quanh</Menu.Item>
-                <Menu.Item key="setting:3">Thiết lập hành trình bay tự động</Menu.Item>
+                <Menu.Item key="setting:3">
+                  <a href={`${config.NHOM3}/taotrinhbay.html`}>Thiết lập hành trình bay tự động</a>
+                </Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<VideoCameraAddOutlined />} title="Quản lý drone">
                 <Menu.Item key="setting:4">Quản lý dữ liệu bay</Menu.Item>
-                <Menu.Item key="setting:5">Quản lý lịch sử bay</Menu.Item>
-                <Menu.Item key="setting:6">Quản lý các hành trình bay</Menu.Item>
+                <Menu.Item key="setting:5">
+                  <a href={`${config.NHOM3}/quanlytrinhbay.html`}>Quản lý các hành trình bay</a>
+                </Menu.Item>
+                <Menu.Item key="setting:6">
+                  <a href={`${config.NHOM3}/thongbao.html`}>Cảnh báo rủi ro</a>
+                </Menu.Item>
                 <Menu.Item key="setting:7">Quản lý các drone đang hoạt động trên bản đồ</Menu.Item>
                 <Menu.Item key="setting:8">Quản lý tổ đội bay</Menu.Item>
                 <Menu.Item key="setting:9">Quản lý thiết bị drone và thiết bị đi kèm</Menu.Item>
