@@ -66,7 +66,9 @@ class Header extends Component {
               </SubMenu>
 
               <SubMenu icon={<VideoCameraAddOutlined />} title="Quản lý drone">
-                <Menu.Item key="setting:4">Quản lý dữ liệu bay</Menu.Item>
+                <Menu.Item key="setting:4">
+                  <a href={`${config.NHOM4}/flight-data`}>Quản lý dữ liệu bay</a>
+                </Menu.Item>
                 <Menu.Item key="setting:5">
                   <a href={`${config.NHOM3}/quanlytrinhbay.html`}>Quản lý các hành trình bay</a>
                 </Menu.Item>
@@ -80,14 +82,20 @@ class Header extends Component {
 
               <SubMenu icon={<WarningOutlined />} title="Phân tích nguy cơ">
                 <Menu.Item key="setting:10">Xem danh sách thành phần lưới điện</Menu.Item>
-                <Menu.Item key="setting:11">Xem danh sách các nguy cơ tiềm ẩn</Menu.Item>
-                <Menu.Item key="setting:12">Gửi cảnh báo và yêu cầu kiểm tra</Menu.Item>
+                <Menu.Item key="setting:11">
+                  <a href={`${config.NHOM2}`}>Xem danh sách các nguy cơ tiềm ẩn</a>
+                </Menu.Item>
+                <Menu.Item key="setting:12">
+                  <a href={`${config.NHOM2}/addcheck`}>Gửi cảnh báo và yêu cầu kiểm tra</a>
+                </Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<ClusterOutlined />} title="Giám sát trung tâm">
                 <Menu.Item key="setting:13">Quản lý thành phần lưới điện</Menu.Item>
                 <Menu.Item key="setting:14">Tiếp nhận thông tin cảnh báo, báo cáo</Menu.Item>
-                <Menu.Item key="setting:15">Xem danh sách toàn bộ các đợt kiểm tra</Menu.Item>
+                <Menu.Item key="setting:15">
+                  <a href={`${config.NHOM2}/checklist`}>Xem danh sách toàn bộ các đợt kiểm tra</a>
+                </Menu.Item>
                 <Menu.Item key="setting:16">Tạo đợt kiểm tra thủ công</Menu.Item>
                 <Menu.Item key="setting:17">Tạo đợt kiểm tra tự động</Menu.Item>
               </SubMenu>
