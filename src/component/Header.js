@@ -90,6 +90,9 @@ class Header extends Component {
                 <Menu.Item key="setting:12">
                   <a href={`${config.NHOM2}/addcheck`}>Gửi cảnh báo và yêu cầu kiểm tra</a>
                 </Menu.Item>
+                <Menu.Item>
+                  <a href={`${config.NHOM6}/analysis`}>Quản lý phân tích sự cố</a>
+                </Menu.Item>
               </SubMenu>
 
               <SubMenu icon={<ClusterOutlined />} title="Giám sát trung tâm">
