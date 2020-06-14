@@ -101,9 +101,13 @@ class Header extends Component {
               </SubMenu>
 
               <SubMenu icon={<FileDoneOutlined />} title="Báo cáo kiểm tra">
-                <Menu.Item key="setting:18">Xem danh sách các đợt kiểm tra</Menu.Item>
+                <Menu.Item key="setting:18">
+                  <a href={`${config.NHOM5}/datatable.html`}>Xem danh sách các đợt kiểm tra</a>
+                </Menu.Item>
                 <Menu.Item key="setting:19">Quản lý vị trí của các đợt kiểm tra trên bản đồ</Menu.Item>
-                <Menu.Item key="setting:20">Tạo báo cáo kết quả kiểm tra theo mẫu</Menu.Item>
+                <Menu.Item key="setting:20">
+                  <a href={`${config.NHOM5}/forms.html`}>Tạo báo cáo kết quả kiểm tra theo mẫu</a>
+                </Menu.Item>
               </SubMenu>
 
               {/* <Link to={`/construction-list`}>Xem danh sách công trình</Link> */}
