@@ -81,12 +81,17 @@ class Header extends Component {
               </SubMenu>
 
               <SubMenu icon={<WarningOutlined />} title="Phân tích nguy cơ">
-                <Menu.Item key="setting:10">Xem danh sách thành phần lưới điện</Menu.Item>
+                <Menu.Item key="setting:10">
+                <a href={`${config.NHOM7}`}>Xem danh sách thành phần lưới điện</a>
+                </Menu.Item>
                 <Menu.Item key="setting:11">
                   <a href={`${config.NHOM2}`}>Xem danh sách các nguy cơ tiềm ẩn</a>
                 </Menu.Item>
                 <Menu.Item key="setting:12">
                   <a href={`${config.NHOM2}/addcheck`}>Gửi cảnh báo và yêu cầu kiểm tra</a>
+                </Menu.Item>
+                <Menu.Item>
+                  <a href={`${config.NHOM6}/analysis`}>Quản lý phân tích sự cố</a>
                 </Menu.Item>
               </SubMenu>
 
@@ -101,9 +106,15 @@ class Header extends Component {
               </SubMenu>
 
               <SubMenu icon={<FileDoneOutlined />} title="Báo cáo kiểm tra">
-                <Menu.Item key="setting:18">Xem danh sách các đợt kiểm tra</Menu.Item>
-                <Menu.Item key="setting:19">Quản lý vị trí của các đợt kiểm tra trên bản đồ</Menu.Item>
-                <Menu.Item key="setting:20">Tạo báo cáo kết quả kiểm tra theo mẫu</Menu.Item>
+                <Menu.Item key="setting:18">
+                  <a href={`${config.NHOM5}/datatable.html`}>Xem danh sách các đợt kiểm tra</a>
+                </Menu.Item>
+                <Menu.Item key="setting:19">
+                  <a href={`${config.NHOM5}/charts.html`}>Biểu đồ số lượng báo cáo tổng hợp</a>
+                </Menu.Item>
+                <Menu.Item key="setting:20">
+                  <a href={`${config.NHOM5}/forms.html`}>Tạo báo cáo kết quả kiểm tra theo mẫu</a>
+                </Menu.Item>
               </SubMenu>
 
               {/* <Link to={`/construction-list`}>Xem danh sách công trình</Link> */}
