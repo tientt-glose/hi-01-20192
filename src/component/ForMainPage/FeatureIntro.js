@@ -4,6 +4,8 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
+import config from '../../config'
+
 const { TweenOneGroup } = TweenOne;
 
 const featuresCN = [
@@ -13,13 +15,15 @@ const featuresCN = [
     src: 'https://gw.alipayobjects.com/zos/rmsportal/VriUmzNjDnjoFoFFZvuh.svg',
     color: '#13C2C2',
     shadowColor: 'rgba(19,194,194,.12)',
+    link: `${config.NHOM9}`
   },
   {
-    title: 'Tạo đợt kiểm tra thủ công',
+    title: 'Tạo đợt kiểm tra',
     content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/smwQOoxCjXVbNAKMqvWk.svg',
     color: '#2F54EB',
     shadowColor: 'rgba(47,84,235,.12)',
+    link: `${config.NHOM2}/addcheck`
   },
   {
     title: 'Thiết lập hành trình bay tự động',
@@ -27,6 +31,7 @@ const featuresCN = [
     src: 'https://gw.alipayobjects.com/zos/rmsportal/hBbIHzUsSbSxrhoRFYzi.svg',
     color: '#F5222D',
     shadowColor: 'rgba(245,34,45,.12)',
+    link: `${config.NHOM3}/taotrinhbay.html`
   },
   {
     title: 'Quản lý dữ liệu bay',
@@ -34,6 +39,7 @@ const featuresCN = [
     src: 'https://gw.alipayobjects.com/zos/rmsportal/BISfzKcCNCYFmTYcUygW.svg',
     color: '#1AC44D',
     shadowColor: 'rgba(26,196,77,.12)',
+    link: `${config.NHOM4}/flight-data`
   },
   {
     title: 'Quản lý tổ đội bay',
@@ -41,13 +47,15 @@ const featuresCN = [
     src: 'https://gw.alipayobjects.com/zos/rmsportal/XxqEexmShHOofjMYOCHi.svg',
     color: '#FAAD14',
     shadowColor: 'rgba(250,173,20,.12)',
+    link: `${config.NHOM8}/members`
   },
   {
-    title: 'Quản lý lịch sử bay',
+    title: 'Quản lý các drone đang hoạt động',
     content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/JsixxWSViARJnQbAAPkI.svg',
     color: '#722ED1',
     shadowColor: 'rgba(114,46,209,.12)',
+    link: `${config.NHOM8}/location`
   },
   {
     title: 'Xem danh sách các đợt kiểm tra',
@@ -55,6 +63,7 @@ const featuresCN = [
     src: 'https://gw.alipayobjects.com/zos/rmsportal/pbmKMSFpLurLALLNliUQ.svg',
     color: '#FA8C16',
     shadowColor: 'rgba(250,140,22,.12)',
+    link: `${config.NHOM2}/checklist`
   },
   {
     title: 'Xem danh sách công trình',
@@ -62,13 +71,15 @@ const featuresCN = [
     src: 'https://gw.alipayobjects.com/zos/rmsportal/aLQyKyUyssIUhHTZqCIb.svg',
     color: '#EB2F96',
     shadowColor: 'rgba(235,45,150,.12)',
+    link: `/construction-list`
   },
   {
-    title: 'Xem danh sách drone xung quanh',
+    title: 'Xem báo cáo kiểm tra mạng lưới điện',
     content: 'Detailed',
     src: 'https://gw.alipayobjects.com/zos/rmsportal/RpJIQitGbSCHwLMimybX.svg',
     color: '#1890FF',
     shadowColor: 'rgba(24,144,255,.12)',
+    link: `${config.NHOM5}/datatable.html`
   },
 ];
 
@@ -159,7 +170,7 @@ class Page1 extends React.PureComponent {
             >
               <img src={item.src} alt="img" style={i === 4 ? { marginLeft: -15 } : {}} />
             </div>
-            <h3>{item.title}</h3>
+            <a href={item.link}><h3>{item.title}</h3></a>
             <p>{item.content}</p>
           </div>
         </li>

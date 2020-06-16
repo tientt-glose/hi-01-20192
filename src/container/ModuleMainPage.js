@@ -42,18 +42,16 @@ class ModuleMainPage extends Component {
               </Panel>
               <Panel header="Nhóm chức năng thống kê tiến độ" key="3">
                 <p><Link to={`/construction-list`}>Xem thống kê tiến độ một công trình</Link></p>
-                <p>Xem tiến độ toàn thể</p>
-                <p>Đang phát triển</p>
               </Panel>
               <Panel header="Nhóm chức năng tạo và kết xuất báo cáo" key="4">
                 <p><Link to={`/choose-report`}>Tạo báo cáo kết quả tiến độ theo mẫu</Link></p>
                 <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra định kì</Link></p>
-                <p>Tạo báo cáo tiến độ hàng ngày</p>
-                <p>Tạo báo cáo dọn dẹp hành lang tuyến</p>
-                <p>Tạo báo cáo sửa chữa bộ phận</p>
-                <p>Tạo báo cáo kiểm tra chức năng</p>
-                <p>Tạo báo cáo lắp đặt thành phần mới</p>
-                <p>Tạo mẫu báo cáo mới</p>
+                <p><Link to={`/create-report`}>Tạo báo cáo tiến độ hàng ngày</Link></p>
+                <p><Link to={`/create-report`}>Tạo báo cáo dọn dẹp hành lang tuyến</Link></p>
+                <p><Link to={`/create-report`}>Tạo báo cáo sửa chữa bộ phận</Link></p>
+                <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra chức năng</Link></p>
+                <p><Link to={`/create-report`}>Tạo báo cáo lắp đặt thành phần mới</Link></p>
+                {/* <p>Tạo mẫu báo cáo mới</p> */}
               </Panel>
             </Collapse>
           </div>

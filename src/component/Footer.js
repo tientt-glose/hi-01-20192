@@ -78,28 +78,28 @@ class Footer extends Component {
                 </div>
               </div>
             </Col>
-            {/* <Col lg={6} sm={24} xs={24}>
+            <Col lg={6} sm={24} xs={24}>
               <div className="footer-center">
                 <h2>
-                  Footer 13
+                  Thông tin về project môn học
                 </h2>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="http://ant.design/">Ant Design</a>
-                  <span> - </span>
-                  <span>Footer 14</span>
+                  GV hướng dẫn: 
+                  <span>TS. Vũ Thị Hương Giang</span>
                 </div>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="https://antv.alipay.com/">AntV</a>
-                  <span> - </span>
-                  <span>Footer 15</span>
+                  Nhóm: 
+                  <span>2019II_HI_01</span>
                 </div>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="https://eggjs.org/">Egg</a>
-                  <span> - </span>
-                  <span>Footer 16</span>
+                  Thành viên: 
+                  <p><span>Nguyễn Mạnh Tiến</span></p>
+                  <p><span>Phạm Hữu Thọ</span></p>
+                  <p><span>Đoàn Duy Phương</span></p>
+                  <p><span>Bùi Ngọc Tú</span></p>
                 </div>
               </div>
-            </Col> */}
+            </Col>
           </Row>
         </div>
         <Row className="bottom-bar">
@@ -136,7 +136,7 @@ class Footer extends Component {
                 Copyright©
               </a>
             </span>
-            <span style={{ marginRight: 12 }}>Make with <span role="img" aria-labelledby="double_heart">💕</span> by HI01. Enjoy!</span>
+            <span style={{ marginRight: 12 }}> Version 2.0. Make with <span role="img" aria-labelledby="double_heart">💕</span> by HI01. Enjoy!</span>
             {/* <span style={{ marginRight: 12 }}>Footer 20</span> */}
           </Col>
         </Row>

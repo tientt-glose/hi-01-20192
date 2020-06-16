@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Layout, Card, Col, Row, Divider} from 'antd';
-
-
+import { Link } from 'react-router-dom';
+import { Layout, Card, Col, Row, Divider, Button } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -138,10 +138,10 @@ class GanttChartPage extends Component {
           work = {this.state.work} />
         <GanttCRUD
           data = {this.state.data} />  */}
-        <br/> <br/>
+        <br /> <br />
         {/* Top-Card */}
-        
-        <Divider />
+
+        <Divider>Thống kê tiến độ</Divider>
         <div className="top-card-wrapper">
           <Row gutter={24}>
             <Col span={6}>
@@ -151,7 +151,7 @@ class GanttChartPage extends Component {
             </Col>
             <Col span={6}>
               <Card style={{ background: '#fff566' }} title="Chờ review" bordered={false}>
-                  <h1>20</h1>công việc
+                <h1>20</h1>công việc
               </Card>
             </Col>
             <Col span={6}>
@@ -166,14 +166,47 @@ class GanttChartPage extends Component {
             </Col>
           </Row>
         </div>
-          <Row gutter={[8, 16]}>
-                            <Col span={12} >
-                                <PieChart />
-                            </Col>
-                            <Col span={12} >
-                                <ColChart />
-                            </Col>
-                        </Row>
+        <Row gutter={[8, 16]}>
+          <Col span={12} >
+            <PieChart />
+          </Col>
+          <Col span={12} >
+            <ColChart />
+          </Col>
+        </Row>
+
+        <Divider>Thao tác chức năng</Divider>
+        <Row gutter={16}>
+          <Col span={6}>
+            <div style={{ margin: 16, textAlign: 'center' }}>
+              <Link to={`/create-report`}>
+                <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo báo cáo theo mẫu</Button>
+              </Link>
+            </div>
+          </Col>
+          <Col span={6}>
+            <div style={{ margin: 16, textAlign: 'center' }}>
+              <Link to={`/create-report`}>
+                <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo báo cáo tiến độ hàng ngày</Button>
+              </Link>
+            </div>
+          </Col>
+          <Col span={6}>
+            <div style={{ margin: 16, textAlign: 'center' }}>
+              <Link to={`/create-report`}>
+                <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo báo cáo kiểm tra chức năng</Button>
+              </Link>
+            </div>
+          </Col>
+          <Col span={6}>
+            <div style={{ margin: 16, textAlign: 'center' }}>
+              <Link to={`/create-report`}>
+                <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo báo cáo lắp đặt thành phần mới</Button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+
         <Footer />
       </div>
     );

@@ -5,6 +5,8 @@ import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import BannerSVGAnim from './BannerSVGAnim'
 
+import config from '../../config'
+
 class Banner extends Component {
   render() {
     return (
@@ -21,16 +23,18 @@ class Banner extends Component {
             Chức năng sử dụng gần đây...
           </p>
           <div key="button" className="button-wrapper">
-          <Link to={`/construction-add`}>
-          {/* <a href="http://preview.pro.ant.design" target="_blank" rel="noopener noreferrer"> */}
-            <Button type="primary">
-              Tạo công trình
+            <Link to={`/construction-add`}>
+              {/* <a href="http://preview.pro.ant.design" target="_blank" rel="noopener noreferrer"> */}
+              <Button type="primary">
+                Tạo công trình
             </Button>
-          </Link>
-          <Button style={{ margin: '0 16px' }} type="primary" ghost>
-            Kết nối drone
-          </Button>
-        </div>
+            </Link>
+            <a href={`${config.NHOM3}/taotrinhbay.html`}>
+              <Button style={{ margin: '0 16px' }} type="primary" ghost>
+                Thiết lập hành trình bay tự động
+              </Button>
+            </a>
+          </div>
         </QueueAnim>
         <TweenOne animation={{ opacity: 1 }} className="banner-image-wrapper">
           <BannerSVGAnim />

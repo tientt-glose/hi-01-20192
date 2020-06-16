@@ -11,6 +11,7 @@ import CreateReportPage from './container/CreateReportPage';
 import ConstructionAdd from './container/ConstructionAdd';
 import ModuleMainPage from './container/ModuleMainPage';
 import CreateReportTemplate from './container/CreateReportTemplate';
+import SignIn from './container/SignIn';
 
 class App extends React.Component {
   render() {
@@ -55,6 +56,11 @@ class App extends React.Component {
           <Route exact path='/construction-add'
             render={(props) => {
               return <ConstructionAdd />
+            }} />
+
+          <Route exact path='/signin'
+            render={(props) => {
+              return <SignIn />
             }} />
         </BrowserRouter>
       </div>
