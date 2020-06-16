@@ -72,15 +72,17 @@ class Header extends Component {
                   <a href={`${config.NHOM4}/flight-data`}>Quản lý dữ liệu bay</a>
                 </Menu.Item>
                 <Menu.Item key="setting:5">
-                  <a href={`${config.NHOM3}/quanlytrinhbay.html`}>Quản lý các hành trình bay</a>
+                  <a href={`${config.NHOM3}/xemdanhsachtrinhbay.html`}>Quản lý các hành trình bay</a>
                 </Menu.Item>
                 <Menu.Item key="setting:6">
-                  <a href={`${config.NHOM3}/thongbao.html`}>Cảnh báo rủi ro</a>
+                  <a href={`${config.NHOM3}/xemcanhbao.html`}>Cảnh báo rủi ro</a>
                 </Menu.Item>
                 <Menu.Item key="setting:7">
+                  <a href={`${config.NHOM3}/dungbando.html`}>Dựng bản đồ</a>
+                </Menu.Item>
+                <Menu.Item key="setting:8">
                   <a href={`${config.NHOM8}/hi08/location`}>Quản lý các drone đang hoạt động trên bản đồ</a>
                   </Menu.Item>
-                <Menu.Item key="setting:8">Quản lý tổ đội bay</Menu.Item>
                 <Menu.Item key="setting:9">
                 <a href={`${config.NHOM8}/hi08/drones`}>Quản lý thiết bị drone và thiết bị đi kèm</a>
                 </Menu.Item>
