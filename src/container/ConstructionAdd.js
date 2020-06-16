@@ -161,9 +161,11 @@ class ConstructionAdd extends Component {
           </Form.Item>
 
           <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit">
-              Xác nhận
+            <Link to={`/gantt`}>
+              <Button type="primary" htmlType="submit">
+                Xác nhận
             </Button>
+            </Link>
             <Link to={`/construction-list`}>
               <Button danger htmlType="submit" style={{ float: 'right' }}>
                 Hủy
