@@ -48,7 +48,7 @@ class Footer extends Component {
                   <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Đăng ký khóa tập huấn</a>
                 </div>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Liên hệ đội ngữ hỗ trợ giải đáp IT</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Liên hệ đội ngũ hỗ trợ giải đáp IT</a>
                 </div>
               </div>
             </Col>
@@ -74,7 +74,7 @@ class Footer extends Component {
                     Email
                   </a>
                   <span> : </span>
-                  <span>hi01@gmail.com</span>
+                  <span>tiennguyenbka198@gmail.com</span>
                 </div>
               </div>
             </Col>

@@ -179,7 +179,7 @@ class GanttChartPage extends Component {
         <Row gutter={16}>
           <Col span={6}>
             <div style={{ margin: 16, textAlign: 'center' }}>
-              <Link to={`/create-report`}>
+              <Link to={`/choose-report`}>
                 <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo báo cáo theo mẫu</Button>
               </Link>
             </div>
