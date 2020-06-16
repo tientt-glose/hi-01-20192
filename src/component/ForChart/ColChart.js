@@ -5,7 +5,7 @@ const ColChart = (props) => {
     const data = [
         {
           type: '3',
-          sales: 38,
+          sales: 38,          
         },
         {
           type: '4',
@@ -29,6 +29,7 @@ const ColChart = (props) => {
         },
       ];
       const config = {
+        
         title: {
           visible: true,
           text: 'Tiến độ công việc trong các tháng',
