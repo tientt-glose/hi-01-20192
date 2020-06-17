@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FormBuilder from 'react-form-builder2';
+import { Modal } from 'antd';
+import { withRouter } from 'react-router-dom'
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -318,6 +320,27 @@ const data = [
 ];
 
 class CreateReportPage extends Component {
+
+  state = { visible: false };
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  };
+
+  handleOk = e => {
+    e.preventDefault()
+    this.props.history.push('/choose-report')
+    this.props.openNotification('Tạo báo cáo thành công!')
+  };
+
+  handleCancel = e => {
+    this.setState({
+      visible: false,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -337,7 +360,16 @@ class CreateReportPage extends Component {
                 data={data} />
             </div>
             <div className="clearfix" style={{ paddingBottom:'30px', marginLeft: '30px', width: '95%' }}>
-              <button className="btn btn-primary float-right" style={{ marginRight: '10px' }}>Hoàn thiện báo cáo</button>
+              <button className="btn btn-primary float-right" style={{ marginRight: '10px' }} onClick={this.showModal}>Hoàn thiện báo cáo</button>
+              <Modal
+                title="Basic Modal"
+                visible={this.state.visible}
+                onOk={this.handleOk}
+                onCancel={this.handleCancel}
+              >
+                <p>Xác nhận tạo báo cáo?</p>
+              </Modal>
+
             </div>
           </div>
         </div>
@@ -347,4 +379,4 @@ class CreateReportPage extends Component {
   }
 }
 
-export default CreateReportPage;
+export default withRouter(CreateReportPage);
