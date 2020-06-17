@@ -204,7 +204,7 @@ class Header extends Component {
                   <Link to={`/signin`}>Đăng nhập</Link>
                 </Menu.Item>
                 <Menu.Item>
-                  <Link to={`/signin`}>Đăng ký</Link>
+                  <Link to={`/signup`}>Đăng ký</Link>
                 </Menu.Item>
               </SubMenu>
             </Menu>
