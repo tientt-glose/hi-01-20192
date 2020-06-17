@@ -13,6 +13,7 @@ import ConstructionAdd from './container/ConstructionAdd';
 import ModuleMainPage from './container/ModuleMainPage';
 import CreateReportTemplate from './container/CreateReportTemplate';
 import SignIn from './container/SignIn';
+import SignUp from './container/SignUp';
 
 class App extends React.Component {
 
@@ -84,6 +85,13 @@ class App extends React.Component {
                         setMessage={this.setMessage}
                         openNotification={this.openNotification}/>
             }} />
+          
+          <Route exact path='/signup'
+            render={(props) => {
+              return <SignUp 
+                        setMessage={this.setMessage}
+                        openNotification={this.openNotification}/>
+            }} />          
         </BrowserRouter>
       </div>
     );
