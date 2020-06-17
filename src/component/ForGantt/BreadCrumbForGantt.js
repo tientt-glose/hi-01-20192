@@ -27,7 +27,7 @@ class BreadCrumbForGantt extends Component {
               <span style={{ color: '#40a9ff' }}> Xem danh sách công trình </span>
             </Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item> <ThunderboltOutlined /> Công trình A</Breadcrumb.Item>
+          <Breadcrumb.Item> <ThunderboltOutlined /> Dọn dẹp hành lang tuyến cột A2</Breadcrumb.Item>
         </Breadcrumb>
       </div>
     );

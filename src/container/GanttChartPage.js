@@ -38,70 +38,109 @@ class GanttChartPage extends Component {
     let d34 = new Date();
     d34.setDate(d34.getDate() - 3);
 
+    let supervisor = ["Đoàn Duy Phương", "Phạm Hữu Thọ", "Bùi Ngọc Tú", "Nguyễn Mạnh Tiến"]
+
     let work = {
-      name: "Công trình A",
-      leader: "Nguyễn Văn A",
+      name: "Dọn dẹp hành lang tuyến cột A2",
+      leader: "Phạm Hữu Thọ",
       start: "16/04/2020",
       end: "01/07/2020",
       duration: 65,
       members: 15,
       imgUrl: "https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg"
     }
+    
+    let name = [
+      "Khảo sát mặt bằng",
+      "Phân tích báo cáo",
+      "Phân tích kiểm tra",
+      "Phân tích bản vẽ",
+      "Nghiên cứu nghiệp vụ",
+      "Ước lượng vật liệu",
+      "Đánh giá mức độ hỏng hóc",
+      "Mua vật liệu xây dựng",
+      "Vận chuyển vật liệu xây dựng khu 1",
+      "Kiểm tra chất lượng vật liệu khu 1",
+      "Đánh dấu khu vực dọn dẹp",
+      "Chặt hạ cây khu 1",
+      "Tiếp tế vật liệu xây dựng khu 1",
+      "Gia cố cột điện khu 1",
+      "Vận chuyển vật liệu xây dựng khu 2",
+      "Kiểm tra chất lượng vật liệu khu 2",
+      "Gia cố hành lang tuyến khu 2",
+      "Tiếp tế vật liệu xây dựng khu 2",
+      "Gia cố cột điện khu 2",
+      "Triển khai drone quan sát khu 1",
+      "Triển khai drone quan sát khu 2",
+      "Đánh giá kết quả khu 1",
+      "Đánh giá kết quả khu 2",
+      "Đánh giá mức an toàn",
+      "Tổng kết chi phí",
+      "Đánh giá mức độ hoàn thành",
+      "Bảo trì"
+    ]
 
     let data = [
       {
         id: 1,
         start: d1,
         end: d2,
-        name: 'Demo Task 1',
-        percentage: 100
+        name: name[0],
+        percentage: 100,
+        supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
       },
       {
         id: 2,
         start: d3,
         end: d4,
-        name: 'Demo Task 2',
+        name: name[1],
         color: 'orange',
-        percentage: 0
+        percentage: 0,
+        supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
       },
       {
         id: 3,
         start: d5,
         end: d6,
-        name: 'Demo Task 3',
+        name: name[2],
         color: 'red',
-        percentage: 0
+        percentage: 0,
+        supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
       },
       {
         id: 4,
         start: d7,
         end: d8,
-        name: 'Demo Task 4',
+        name: name[3],
         color: 'blue',
-        percentage: 20
+        percentage: 20,
+        supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
       }
     ];
-    for (let i = 5; i < 27; i++) {
+    for (let i = 5; i <= name.length; i++) {
       let percent = Math.floor(Math.random() * 100) + 1
       if (i % 4 === 0) percent = 100
       let newTask = {
         id: i,
         start: this.getRandomStartDate(),
         end: this.getRandomEndDate(),
-        name: 'Demo Task ' + i,
+        name: name[i-1],
         color: this.getRandomColor(),
-        percentage: percent
+        percentage: percent,
+        // supervisor: supervisor[Math.floor(Math.random() * supervisorCount)]
+        supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
       }
       data.push(newTask)
     }
 
-    data[16] = {
-      id: 17,
+    data[11] = {
+      id: 12,
       start: d33,
       end: d34,
-      name: 'Demo Task 17',
+      name: name[11],
       color: this.getRandomColor(),
-      percentage: 100
+      percentage: 100,
+      supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
     }
     this.state = { data: data, work: work }
   }
