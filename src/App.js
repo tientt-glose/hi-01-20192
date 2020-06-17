@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { notification } from 'antd';
 
 import './App.css';
 import './scss/application.scss';
@@ -14,13 +15,32 @@ import CreateReportTemplate from './container/CreateReportTemplate';
 import SignIn from './container/SignIn';
 
 class App extends React.Component {
+
+  state = {
+    message: ''
+  }
+
+  setMessage = (message) => {
+    this.setState({ message })
+  }
+
+  openNotification = (mess) => {
+    notification.open({
+      message: mess,
+      description: '',
+      onClick: () => {
+        console.log('Notification Clicked!');
+      },
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <BrowserRouter>
           <Route exact path='/'
             render={(props) => {
-              return <MainPage />
+              return <MainPage message={this.state.message}/>
             }} />
 
           <Route exact path='/module'
@@ -45,7 +65,7 @@ class App extends React.Component {
 
           <Route exact path='/create-report'
             render={(props) => {
-              return <CreateReportPage />
+              return <CreateReportPage openNotification={this.openNotification}/>
             }} />
 
           <Route exact path='/create-report-template'
@@ -60,7 +80,9 @@ class App extends React.Component {
 
           <Route exact path='/signin'
             render={(props) => {
-              return <SignIn />
+              return <SignIn 
+                        setMessage={this.setMessage}
+                        openNotification={this.openNotification}/>
             }} />
         </BrowserRouter>
       </div>

@@ -171,9 +171,34 @@ class Header extends Component {
                   </Menu.Item>
                 </Menu.ItemGroup>
               </SubMenu>
-              <Menu.Item icon={<InfoCircleOutlined />}></Menu.Item>
-              <Menu.Item icon={<BellOutlined />}></Menu.Item>
-              {/* <Menu.Item icon={<SmileOutlined />}></Menu.Item> */}
+              <SubMenu icon={<InfoCircleOutlined />}>
+                <Menu.Item>
+                  <a href="https://drive.google.com/file/d/1qIMqj6ERryrrwQxBwHXW3D23zAgQ0_xB/view?usp=sharing">Tài liệu hướng dẫn sử dụng</a>
+                </Menu.Item>
+                <Menu.Item>
+                <a target="_blank" rel="noopener noreferrer" href='https://youtu.be/GfUZD2JNqho'>Video hướng dẫn</a>
+                </Menu.Item>
+                <Menu.Item>
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Đăng ký khóa tập huấn</a>
+                </Menu.Item>
+                <Menu.Item>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Liên hệ đội ngũ hỗ trợ giải đáp IT</a>
+                </Menu.Item>
+              </SubMenu>
+              <SubMenu icon={<BellOutlined />}>
+                <Menu.Item>
+                  <Link to={`/gantt`}>Công trình A vừa được cập nhật</Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to={`/gantt`}>Demo Task 4 ở công trình A đã quá hạn!</Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to={`/gantt`}>Demo Task 1 ở công trình A đã được hoàn thành!</Link>
+                </Menu.Item>
+                <Menu.Item>
+                  <Link to={`/gantt`}>Demo Task 17 ở công trình A đã được hoàn thành!</Link>
+                </Menu.Item>
+              </SubMenu>
               <SubMenu icon={<SmileOutlined />}>
                 <Menu.Item>
                   <Link to={`/signin`}>Đăng nhập</Link>

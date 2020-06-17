@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Input, Button, DatePicker, Select, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
+import { withRouter } from 'react-router-dom'
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
@@ -20,10 +20,6 @@ const tailLayout = {
     span: 15,
   },
 };
-const rangeConfig = {
-  rules: [{ type: 'array', message: 'Please select time!' }],
-};
-
 
 class SignIn extends Component {
   onFinish = values => {
@@ -33,6 +29,13 @@ class SignIn extends Component {
   onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
+
+  onSignin = (e) => {
+    e.preventDefault()
+    this.props.history.push('/')
+    this.props.openNotification('Sign in successfully!')
+  }
+
   render() {
     return (
       <div>
@@ -66,18 +69,15 @@ class SignIn extends Component {
           </Form.Item>
 
           <Form.Item {...tailLayout}>
-            <Link to={`/`}>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" onClick={this.onSignin}>
                 Submit
               </Button>
-            </Link>
           </Form.Item>
         </Form>
-
         <Footer />
       </div>
     );
   }
 }
 
-export default SignIn;
+export default withRouter(SignIn);

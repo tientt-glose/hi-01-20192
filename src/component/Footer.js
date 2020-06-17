@@ -38,11 +38,9 @@ class Footer extends Component {
                 <h2>Trung tâm hỗ trợ</h2>
                 <div>
                   <a href="https://drive.google.com/file/d/1qIMqj6ERryrrwQxBwHXW3D23zAgQ0_xB/view?usp=sharing">Tài liệu hướng dẫn sử dụng</a>
-                  {/* <span> - </span>
-                  <span>Tài liệu hướng dẫn sử dụng</span> */}
                 </div>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Video hướng dẫn</a>
+                  <a target="_blank" rel="noopener noreferrer" href='https://youtu.be/GfUZD2JNqho'>Video hướng dẫn</a>
                 </div>
                 <div>
                   <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/">Đăng ký khóa tập huấn</a>
@@ -56,23 +54,17 @@ class Footer extends Component {
               <div className="footer-center">
                 <h2>Liên hệ phản hồi đội ngũ phát triển</h2>
                 <div>
-                  <a href="google.com">
-                    Nhóm phát triển
-                  </a>
+                  Nhóm phát triển
                   <span> : </span>
                   <span>HI_01</span>
                 </div>
                 <div>
-                  <a href="google.com">
-                    Đại diện
-                  </a>
+                  Đại diện
                   <span> : </span>
                   <span>Nguyễn Mạnh Tiến</span>
                 </div>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="google.com">
-                    Email
-                  </a>
+                  Email
                   <span> : </span>
                   <span>tiennguyenbka198@gmail.com</span>
                 </div>
@@ -85,11 +77,11 @@ class Footer extends Component {
                 </h2>
                 <div>
                   GV hướng dẫn: 
-                  <span>TS. Vũ Thị Hương Giang</span>
+                  <span> TS. Vũ Thị Hương Giang</span>
                 </div>
                 <div>
                   Nhóm: 
-                  <span>2019II_HI_01</span>
+                  <span> 2019II_HI_01</span>
                 </div>
                 <div>
                   Thành viên: 
