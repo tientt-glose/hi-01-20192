@@ -4,6 +4,7 @@ import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import TimeLine from 'react-gantt-timeline';
 import './Gantt.css';
+import { notification } from 'antd';
 
 const A_DAY = 60*60*24*1000;
 const dateFormat = 'MM/DD/YYYY';
@@ -13,6 +14,16 @@ class Gantt_CRUD extends Component {
     super(props);
     this.state = { data: this.props.data, links: [], selectedItem: null };
   }
+
+  openNotification = (title, description) => {
+    notification.open({
+      message: title,
+      description: description,
+      onClick: () => {
+        console.log('Notification Clicked!');
+      },
+    });
+  };
 
   genID() {
     function S4() {
@@ -52,9 +63,21 @@ class Gantt_CRUD extends Component {
     let newLink = this.createLink(item.start, item.end);
     this.setState({ links: [...this.state.links, newLink], selectedItem: newLink });
   };
+
+  
+
   onSelectItem = (item) => {
-    console.log(`Select Item ${item}`);
-    console.log(item)
+    let message = (
+      <div>
+        <div></div>
+        <div>Người quản lý: {item.supervisor}</div>
+        <div>{item.start.toString().slice(0,10).replace(/-/g,"")} - {item.end.toString().slice(0,10).replace(/-/g,"")}</div>
+        <div>Trạng thái: {(new Date() - item.end > 0) ? (
+          item.percentage < 100 ? "Quá hạn" : "Đúng hạn"
+        ) : "Đang tiến hành"}</div>
+      </div>
+    )
+    this.openNotification(item.name, message)
     this.setState({ selectedItem: item });
   };
 
@@ -134,7 +157,6 @@ class Gantt_CRUD extends Component {
     // console.log(event.keyCode)
     // console.log(parseInt(event.currentTarget.textContent))
     if(event.keyCode === 13 || event.keyCode === 27) {
-      console.log("Got here")
       this.recordUpdateTask(parseInt(event.currentTarget.textContent))
     }
   }
@@ -159,7 +181,7 @@ class Gantt_CRUD extends Component {
             <td className="non-header" >{((work.end - work.start)/A_DAY).toFixed(0)}</td>
             <td className="non-header" onClick={() => this.onSelectItem(work)}>
               {/* <span contenteditable="true" onInput={this.recordUpdateTask} >{work.percentage}</span> */}
-              <span contenteditable="true" onKeyDown={this.updateTask}>{work.percentage}</span>
+              <span contentEditable="true" onKeyDown={this.updateTask}>{work.percentage}</span>
             </td>
           </tr>
         )
