@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Card, Col, Row, Divider, Button } from 'antd';
+import { Layout, Card, Col, Row, Divider, Button,Table, Tag,Space } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 import Header from '../component/Header'
@@ -142,7 +142,71 @@ class GanttChartPage extends Component {
       percentage: 100,
       supervisor: supervisor[Math.floor(Math.random() * supervisor.length)]
     }
-    this.state = { data: data, work: work }
+    
+    const columnsData = [
+      
+    ];
+    for (let i = 1; i <= 11; i++){
+      let task = {
+        taskName: data[i].name,
+        worker: data[i].supervisor,
+        start: data[i].start.toString().slice(0,10).replace(/-/g,""),
+        end: data[i].end.toString().slice(0,10).replace(/-/g,""),
+        tags: (new Date() - data[i].end > 0) ? (
+          data[i].percentage < 100 ? "Quá hạn" : "Đúng hạn"
+        ) : "Đang tiến hành",
+      }
+      columnsData.push(task);
+    }
+    
+
+    const columns = [
+      {
+        title: 'Tên công trình',
+        dataIndex: 'taskName',
+        key: 'taskName',
+        // render: text => <a>{text}</a>,
+      },
+      {
+        title: 'Người thực hiện',
+        dataIndex: 'worker',
+        key: 'worker',
+      },
+      {
+        title: 'Ngày bắt đầu',
+        dataIndex: 'start',
+        key: 'start',
+      },
+      {
+        title: 'Ngày kết thúc',
+        dataIndex: 'end',
+        key: 'end',
+      },
+      {
+        title: 'Trạng thái',
+        key: 'tags',
+        dataIndex: 'tags',        
+        render: tags => (
+          <>
+            {[tags].map(tag => {
+              let color = tag === 'Quá hạn' ? 'red' : 'green';
+              if (tag === 'Đang tiến hành') {
+                color = 'yellow';
+              }
+              return (
+                <Tag color={color} key={tag}>
+                  {tag.toUpperCase()}
+                </Tag>
+              );
+            })}
+          </>
+        ),
+      },
+      
+    ];
+    this.state = { data: data, work: work, columns: columns, columnsData: columnsData }  
+
+
   }
 
   getRandomStartDate() {
@@ -179,6 +243,8 @@ class GanttChartPage extends Component {
           data = {this.state.data} />  */}
         <br /> <br />
         {/* Top-Card */}
+        <Divider>Bảng phân chia công việc</Divider> <br/>
+        <Table columns={this.state.columns} dataSource={this.state.columnsData} bordered />
 
         <Divider>Thống kê tiến độ</Divider>
         <div className="top-card-wrapper">
@@ -215,7 +281,7 @@ class GanttChartPage extends Component {
         </Row>
 
         <Divider>Thao tác chức năng</Divider>
-        <Row gutter={16}>
+        <Row gutter={16}>           
           <Col span={6}>
             <div style={{ margin: 16, textAlign: 'center' }}>
               <Link to={`/choose-report`}>
