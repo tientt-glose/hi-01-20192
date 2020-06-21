@@ -429,21 +429,6 @@ class CreateReportPage2 extends Component {
               <Divider>Bảng phân chia công việc</Divider> <br/>
               <Table columns={this.state.columns} dataSource={this.state.columnsData} bordered pagination={false} />
 
-              <div className="site-module-wrapper">
-                <Divider>Tổng quan tiến độ</Divider>
-                <Row gutter={16}>
-                  <Col span={8}>
-                    <Statistic title="Số công việc đang tiến hành" value={20} suffix="/ 60" valueStyle={{ color: '#40a9ff' }} />
-                  </Col>
-                  <Col span={8}>
-                    <Statistic title="Số công việc quá hạn" value={20} suffix="/ 60" valueStyle={{ color: '#cf1322' }} />
-                  </Col>
-                  <Col span={8}>
-                    <Statistic title="Số công việc đúng hạn" value={20} suffix="/ 60" valueStyle={{ color: '#3f8600' }} />
-                  </Col>
-                </Row>
-              </div>
-
               <FormBuilder.ReactFormGenerator
                 download_path=""
                 answer_data={{}}
