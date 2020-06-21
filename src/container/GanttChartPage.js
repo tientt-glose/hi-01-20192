@@ -146,7 +146,7 @@ class GanttChartPage extends Component {
     const columnsData = [
       
     ];
-    for (let i = 1; i <= 11; i++){
+    for (let i = 1; i < name.length; i++){
       let task = {
         taskName: data[i].name,
         worker: data[i].supervisor,
