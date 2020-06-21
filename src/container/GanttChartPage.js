@@ -233,6 +233,7 @@ class GanttChartPage extends Component {
       <div>
         <Header />
         <BreadCrumbForGantt />
+        <Divider>Lựa chọn dải thời gian gantt để xem thêm thông tin</Divider>
         <Layout style={{ "background-color": "white" }}>
           <Sider style={{ "background-color": "white", height: "100%" }}><ConstructionInfo work={this.state.work} /></Sider>
           <Content style={{ "background-color": "white" }}><GanttCRUD data={this.state.data} addTask={this.addTask} /> </Content>
