@@ -15,18 +15,18 @@ class ConstructionListPage extends Component {
     searchString: '',
     allItems: [
       {
-        title: 'Sửa tụ điện cột F25',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
-        address: '458 Minh Khai, Vĩnh Tuy, Hà Nội',
-        time: '16/04/2020 - 01/07/2020',
-        member: '15 kỹ sư'
-      }, 
-      {
         title: 'Dọn dẹp hành lang tuyến cột A2',
         imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
         address: 'Thư viện Tạ Quang Bửu',
         time: '08/03/2020 - NA',
         member: '20 kỹ sư'
+      }, 
+      {
+        title: 'Sửa tụ điện cột F25',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        address: '458 Minh Khai, Vĩnh Tuy, Hà Nội',
+        time: '16/04/2020 - 01/07/2020',
+        member: '15 kỹ sư'
       }, 
       {
         title: 'Công trình C',

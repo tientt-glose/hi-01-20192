@@ -9,6 +9,7 @@ import GanttChartPage from './container/GanttChartPage'
 import ConstructionListPage from './container/ConstructionListPage';
 import ChooseReportPage from './container/ChooseReportPage';
 import CreateReportPage from './container/CreateReportPage';
+import CreateReportPage2 from './container/CreateReportPage2';
 import ConstructionAdd from './container/ConstructionAdd';
 import ModuleMainPage from './container/ModuleMainPage';
 import CreateReportTemplate from './container/CreateReportTemplate';
@@ -68,6 +69,12 @@ class App extends React.Component {
             render={(props) => {
               return <CreateReportPage openNotification={this.openNotification}/>
             }} />
+
+          <Route exact path='/create-report-2'
+            render={(props) => {
+              return <CreateReportPage2 openNotification={this.openNotification}/>
+          }} />
+
 
           <Route exact path='/create-report-template'
             render={(props) => {
