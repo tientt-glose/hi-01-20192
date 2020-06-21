@@ -291,7 +291,7 @@ class GanttChartPage extends Component {
           </Col>
           <Col span={6}>
             <div style={{ margin: 16, textAlign: 'center' }}>
-              <Link to={`/create-report`}>
+              <Link to={`/create-report-2`}>
                 <Button type="primary" size="large" shaspe="round" icon={<PlusOutlined />}>Tạo báo cáo tiến độ hàng ngày</Button>
               </Link>
             </div>
