@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 import Header from '../component/Header'
 import Footer from '../component/Footer'
-import BreadCrumbForSignIn from '../component/ForSignIn/BreadCrumbForSignIn'
+import BreadCrumbForSignUp from '../component/ForSignIn/BreadCrumbForSignUp'
 
 const layout = {
   labelCol: {
@@ -40,7 +40,7 @@ class SignUp extends Component {
     return (
       <div>
         <Header />
-        <BreadCrumbForSignIn />
+        <BreadCrumbForSignUp />
         <Form
           {...layout}
           name="basic"

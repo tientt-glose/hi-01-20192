@@ -95,7 +95,7 @@ const assetmentData = [
     "canHaveOptionValue": true,
     "canPopulateFromApi": true,
     "field_name": "text_area_68BEC2B4-9E84-41B9-94EE-0B8023AE1944",
-    "label": "Ghi chú",
+    "label": "Ghi chú về bảng tiến độ",
     "dirty": false
   },
   {
@@ -155,7 +155,7 @@ const assetmentData = [
     "canHaveOptionValue": true,
     "canPopulateFromApi": true,
     "field_name": "text_area_F4C8961C-8D33-4C32-8926-5778E3A6DDB7",
-    "label": "Ghi chú ",
+    "label": "Ghi chú cho báo cáo",
     "dirty": false
   }
 ];
@@ -196,7 +196,7 @@ class CreateReportPage2 extends Component {
       members: 15,
       imgUrl: "https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg"
     }
-    
+
     let name = [
       "Khảo sát mặt bằng",
       "Phân tích báo cáo",
@@ -309,7 +309,7 @@ class CreateReportPage2 extends Component {
 
     const columns = [
       {
-        title: 'Tên công trình',
+        title: 'Tên hạng mục',
         dataIndex: 'taskName',
         key: 'taskName',
         // render: text => <a>{text}</a>,
@@ -351,9 +351,7 @@ class CreateReportPage2 extends Component {
       },
       
     ];
-    this.state = { data: data, work: work, columns: columns, columnsData: columnsData }  
-
-
+    this.state = { data: data, work: work, columns: columns, columnsData: columnsData }
   }
 
   state = { visible: false };
@@ -417,13 +415,13 @@ class CreateReportPage2 extends Component {
                 <Divider>Thông tin kiểm soát tiến độ</Divider>
                 <Row gutter={16}>
                   <Col span={8}>
-                    <Statistic title="Số hạng mục đang tiến hành" value={9} suffix="/ 11" valueStyle={{ color: '#efd999' }} />
+                    <Statistic title="Số hạng mục đang tiến hành" value={24} suffix="/ 26" valueStyle={{ color: '#efd999' }} />
                   </Col>
                   <Col span={8}>
-                    <Statistic title="Số hạng mục đang quá tiến độ" value={1} suffix="/ 11" valueStyle={{ color: '#cf1322' }} />
+                    <Statistic title="Số hạng mục đang quá tiến độ" value={1} suffix="/ 26" valueStyle={{ color: '#cf1322' }} />
                   </Col>
                   <Col span={8}>
-                    <Statistic title="Số hạng mục hoàn thành" value={1} suffix="/ 11" valueStyle={{ color: '#3f8600' }} />
+                    <Statistic title="Số hạng mục hoàn thành" value={1} suffix="/ 26" valueStyle={{ color: '#3f8600' }} />
                   </Col>
                 </Row>
               </div>
