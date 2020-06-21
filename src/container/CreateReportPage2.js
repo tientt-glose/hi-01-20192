@@ -187,6 +187,16 @@ class CreateReportPage2 extends Component {
 
     let supervisor = ["Đoàn Duy Phương", "Phạm Hữu Thọ", "Bùi Ngọc Tú", "Nguyễn Mạnh Tiến"]
 
+    let work = {
+      name: "Dọn dẹp hành lang tuyến cột A2",
+      leader: "Phạm Hữu Thọ",
+      start: "16/04/2020",
+      end: "01/07/2020",
+      duration: 65,
+      members: 15,
+      imgUrl: "https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg"
+    }
+    
     let name = [
       "Khảo sát mặt bằng",
       "Phân tích báo cáo",
@@ -216,16 +226,6 @@ class CreateReportPage2 extends Component {
       "Đánh giá mức độ hoàn thành",
       "Bảo trì"
     ]
-
-    let work = {
-      name: "Dọn dẹp hành lang tuyến cột A2",
-      leader: "Phạm Hữu Thọ",
-      start: "16/04/2020",
-      end: "01/07/2020",
-      duration: 65,
-      members: 15,
-      imgUrl: "https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg"
-    }
 
     let data = [
       {
@@ -293,7 +293,7 @@ class CreateReportPage2 extends Component {
     const columnsData = [
       
     ];
-    for (let i = 1; i <= 11; i++){
+    for (let i = 1; i < name.length; i++){
       let task = {
         taskName: data[i].name,
         worker: data[i].supervisor,
@@ -309,7 +309,7 @@ class CreateReportPage2 extends Component {
 
     const columns = [
       {
-        title: 'Tên hạng mục',
+        title: 'Tên công trình',
         dataIndex: 'taskName',
         key: 'taskName',
         // render: text => <a>{text}</a>,
@@ -351,7 +351,9 @@ class CreateReportPage2 extends Component {
       },
       
     ];
-    this.state = { data: data, work: work, columns: columns, columnsData: columnsData }
+    this.state = { data: data, work: work, columns: columns, columnsData: columnsData }  
+
+
   }
 
   state = { visible: false };
@@ -415,7 +417,7 @@ class CreateReportPage2 extends Component {
                 <Divider>Thông tin kiểm soát tiến độ</Divider>
                 <Row gutter={16}>
                   <Col span={8}>
-                    <Statistic title="Số hạng mục đang tiến hành" value={9} suffix="/ 11" valueStyle={{ color: '#40a9ff' }} />
+                    <Statistic title="Số hạng mục đang tiến hành" value={9} suffix="/ 11" valueStyle={{ color: '#efd999' }} />
                   </Col>
                   <Col span={8}>
                     <Statistic title="Số hạng mục đang quá tiến độ" value={1} suffix="/ 11" valueStyle={{ color: '#cf1322' }} />
@@ -428,21 +430,6 @@ class CreateReportPage2 extends Component {
 
               <Divider>Bảng phân chia công việc</Divider> <br/>
               <Table columns={this.state.columns} dataSource={this.state.columnsData} bordered pagination={false} />
-
-              <div className="site-module-wrapper">
-                <Divider>Tổng quan tiến độ</Divider>
-                <Row gutter={16}>
-                  <Col span={8}>
-                    <Statistic title="Số công việc đang tiến hành" value={20} suffix="/ 60" valueStyle={{ color: '#40a9ff' }} />
-                  </Col>
-                  <Col span={8}>
-                    <Statistic title="Số công việc quá hạn" value={20} suffix="/ 60" valueStyle={{ color: '#cf1322' }} />
-                  </Col>
-                  <Col span={8}>
-                    <Statistic title="Số công việc đúng hạn" value={20} suffix="/ 60" valueStyle={{ color: '#3f8600' }} />
-                  </Col>
-                </Row>
-              </div>
 
               <FormBuilder.ReactFormGenerator
                 download_path=""
