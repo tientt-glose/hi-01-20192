@@ -35,6 +35,7 @@ class ModuleMainPage extends Component {
               <Panel header="Chức năng sử dụng gần đây" key="1">
                 <p><Link to={`/construction-add`}>Tạo công trình</Link></p>
                 <p><Link to={`/create-report`}>Tạo báo cáo kiểm tra định kì</Link></p>
+                <p><Link to={`/construction-list`}>Xem danh sách công trình</Link></p>
               </Panel>
               <Panel header="Nhóm chức năng thiết lập tiến độ" key="2">
                 <p><Link to={`/construction-add`}>Tạo công trình</Link></p>
