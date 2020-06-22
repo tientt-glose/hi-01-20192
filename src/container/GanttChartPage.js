@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Card, Col, Row, Divider, Button,Table, Tag,Space } from 'antd';
+import { Layout, Card, Col, Row, Divider, Button,Table, Tag } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
 import Header from '../component/Header'
