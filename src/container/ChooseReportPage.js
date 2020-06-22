@@ -35,7 +35,7 @@ class ChooseReportPage extends Component {
               </Link>
             </Col>
             <Col span={8}>
-              <Link to={`/create-report`}>
+              <Link to={`/create-report-2`}>
                 <Card hoverable
                   title="Báo cáo tiến độ hàng ngày" bordered={false}
                   cover={<img alt="example" src="https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg" />}
