@@ -16,7 +16,7 @@ class ConstructionListPage extends Component {
     allItems: [
       {
         title: 'Dọn dẹp hành lang tuyến cột A2',
-        imgSrc: 'https://lh3.googleusercontent.com/proxy/8HgRNnMwxt-ApfgGz6PenL9IGrc_ljw32kxXuLEaF0wHm7kZ-Dneiz6kScPYOlklTLRWT3VszJmeV4vsCVNeACeR1D6yztUwVTWC0CWU-BsN6xJ3tLwTiAg7xMmfetZVkmgEyVC1',
+        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
         address: 'Thư viện Tạ Quang Bửu',
         time: '08/03/2020 - NA',
         member: '20 kỹ sư'
@@ -37,7 +37,7 @@ class ConstructionListPage extends Component {
       }, 
       {
         title: 'Công trình D',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        imgSrc: 'https://lh3.googleusercontent.com/proxy/8HgRNnMwxt-ApfgGz6PenL9IGrc_ljw32kxXuLEaF0wHm7kZ-Dneiz6kScPYOlklTLRWT3VszJmeV4vsCVNeACeR1D6yztUwVTWC0CWU-BsN6xJ3tLwTiAg7xMmfetZVkmgEyVC1',        
         address: 'Địa chỉ',
         time: 'Ngày khởi công - Ngày hoàn tất',
         member: 'Số kỹ sư tham gia'
