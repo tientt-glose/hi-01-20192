@@ -13,7 +13,7 @@ class ConstructionList extends Component {
           <Link to={`/gantt`}>
             <Card hoverable
               title={project.title} bordered={false}
-              cover={<img alt="example" src={project.imgSrc} />}
+              cover={<img alt="example" src={project.imgSrc} style={{width: '100%', height: 330}} />}
             >
               <p><EnvironmentOutlined /> {project.address}</p>
               <p><FieldTimeOutlined /> {project.time}</p>

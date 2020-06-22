@@ -16,21 +16,21 @@ class ConstructionListPage extends Component {
     allItems: [
       {
         title: 'Dọn dẹp hành lang tuyến cột A2',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        imgSrc: 'https://lh3.googleusercontent.com/proxy/8HgRNnMwxt-ApfgGz6PenL9IGrc_ljw32kxXuLEaF0wHm7kZ-Dneiz6kScPYOlklTLRWT3VszJmeV4vsCVNeACeR1D6yztUwVTWC0CWU-BsN6xJ3tLwTiAg7xMmfetZVkmgEyVC1',
         address: 'Thư viện Tạ Quang Bửu',
         time: '08/03/2020 - NA',
         member: '20 kỹ sư'
       }, 
       {
         title: 'Sửa tụ điện cột F25',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        imgSrc: 'https://jimglaserlaw.com/wp-content/uploads/2018/11/constructionsitestockphoto.jpg',
         address: '458 Minh Khai, Vĩnh Tuy, Hà Nội',
         time: '16/04/2020 - 01/07/2020',
         member: '15 kỹ sư'
       }, 
       {
         title: 'Công trình C',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsp9a6CRKWKp6UsF0ZrYCImUEPq-07Hmtw73uU95O9XHvPexK6&usqp=CAU',
         address: 'Địa chỉ',
         time: 'Ngày khởi công - Ngày hoàn tất',
         member: 'Số kỹ sư tham gia'
@@ -44,14 +44,14 @@ class ConstructionListPage extends Component {
       }, 
       {
         title: 'Công trình E',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPMDMU1-adNSsUF1wFtir6Aq96GWltT6SwdaMMNPI23uusRnQN&usqp=CAU',
         address: 'Địa chỉ',
         time: 'Ngày khởi công - Ngày hoàn tất',
         member: 'Số kỹ sư tham gia'
       }, 
       {
         title: 'Công trình F',
-        imgSrc: 'https://img.etimg.com/thumb/msid-69127844,width-1200,height-900,imgsize-347903,overlay-etrise/photo.jpg',
+        imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRcJnqXMdSdNeWFBOuZs6iPPeIIECb04uX-QTKiFERJ-EpSTGy&usqp=CAU',
         address: 'Địa chỉ',
         time: 'Ngày khởi công - Ngày hoàn tất',
         member: 'Số kỹ sư tham gia'
