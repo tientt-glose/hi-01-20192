@@ -37,7 +37,7 @@ class ConstructionListPage extends Component {
       }, 
       {
         title: 'Công trình D',
-        imgSrc: 'https://lh3.googleusercontent.com/proxy/8HgRNnMwxt-ApfgGz6PenL9IGrc_ljw32kxXuLEaF0wHm7kZ-Dneiz6kScPYOlklTLRWT3VszJmeV4vsCVNeACeR1D6yztUwVTWC0CWU-BsN6xJ3tLwTiAg7xMmfetZVkmgEyVC1',        
+        imgSrc: 'https://base.imgix.net/files/base/ebm/tdworld/image/2019/04/tdworld_18433_substation_lines_kurmyshov.png?auto=format&fit=crop&h=432&w=768',        
         address: 'Địa chỉ',
         time: 'Ngày khởi công - Ngày hoàn tất',
         member: 'Số kỹ sư tham gia'
